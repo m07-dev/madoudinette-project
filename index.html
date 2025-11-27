@@ -1,36 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png">
+    <title>Acceuil - Madoudinette</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                // Couleurs de la charte graphique
-                'vert-olive': '#929f09',   
-                'orange-brul': '#e7820a',
-                'jaune-dore': '#fab716',
-                'marron-fonce': '#52300f',
-                'fond-creme': '#ffd79d',
-              },
-              fontFamily: {
-                // Utilisation de la police Montserrat pour le corps du texte
-                sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'], 
-                // Pour la police AC Soft Icecream, vous devrez la charger via CSS ou Google Fonts.
-              }
-            }
-          }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "vert-olive": "#929f09",
+              "orange-brul": "#e7820a",
+              "jaune-dore": "#fab716",
+              "marron-fonce": "#52300f",
+              "fond-creme": "#FDF7EDCF",
+            },
+            fontFamily: {
+              // AJOUTEZ CETTE LIGNE POUR VOS TITRES :
+              display: ["AC Soft Icecream Display", "cursive"],
+              // Conservez Montserrat pour le texte :
+              sans: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
-  </head> 
+  </head>
   <body>
-    <nav class="bg-vert-olive text-white p-4">
-        <h1 class="text-3xl font-sans">Hello World</h1>
+    <nav class="flex items-center justify-between bg-fond-creme p-4">
+      <div class="flex items-center space-x-5">
+        <img
+          class="h-14 w-14 rounded-lg"
+          src="./images/madoudinette logo.png"
+          alt="madoudinette_logo"
+        />
+        <h1 class="font-display text-4xl text-marron-fonce">Madoudinette</h1>
+      </div>
+      <div>
+        <ul class="flex space-x-14 mr-14">
+          <li
+            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-jaune-dore"
+          >
+            <a href="./index.html">Acceuil</a>
+          </li>
+          <li
+            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+          >
+            <a href="./catalogue.html">Catalogue</a>
+          </li>
+          <li
+            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+          >
+            <a href="./culture.html">Culture & Bien-Fait</a>
+          </li>
+          <li
+            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+          >
+            <a href="./contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </body>
 </html>

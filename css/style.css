@@ -1,0 +1,18 @@
+/* css/style.css */
+
+@font-face {
+    font-family: 'AC Soft Icecream Display'; /* C'est le nom que vous utiliserez dans Tailwind */
+    /* Le fichier présent dans le dossier fonts est un TTF (AC-softice-cream.ttf).
+       On pointe donc vers le fichier existant et on indique le bon format. */
+    src: url('../fonts/AC-softice-cream.ttf') format('truetype');
+    /* IMPORTANT : si vous fournissez aussi une version .woff2, ajoutez-la en premier pour de meilleures performances */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Vous pouvez ensuite laisser vos variables CSS existantes */
+:root {
+    /* ... vos couleurs existantes ... */
+}
+/* ... votre CSS normal ... */
