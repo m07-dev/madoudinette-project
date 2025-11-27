@@ -4,10 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                // Couleurs de la charte graphique
+                'vert-olive': '#929f09',   
+                'orange-brul': '#e7820a',
+                'jaune-dore': '#fab716',
+                'marron-fonce': '#52300f',
+                'fond-creme': '#ffd79d',
+              },
+              fontFamily: {
+                // Utilisation de la police Montserrat pour le corps du texte
+                sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'], 
+                // Pour la police AC Soft Icecream, vous devrez la charger via CSS ou Google Fonts.
+              }
+            }
+          }
+        }
+    </script>
+</head>
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <nav>
+        <h1>Hello World</h1>
+    </nav>
   </body>
 </html>
