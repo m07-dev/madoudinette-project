@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png">
+    <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png" />
     <title>Acceuil - Madoudinette</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,7 +35,7 @@
       };
     </script>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <nav class="flex items-center justify-between bg-fond-creme p-4">
       <div class="flex items-center space-x-5">
         <img
@@ -70,5 +70,23 @@
         </ul>
       </div>
     </nav>
+    <main>
+      <div class="max-w-3xl mx-auto aspect-video">
+        <h2 class=" text-marron-fonce text-4xl flex justify-center p-7 font-bold">Présentation</h2>
+        <iframe
+          class="w-full h-full"
+          src="https://www.youtube-nocookie.com/embed/0saajiYGCRw?start=3&rel=0&modestbranding=1"
+          title="Vidéo Madoudinette"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </main>
+    <footer
+      class="mt-auto flex items-center justify-center bg-fond-creme p-4 space-y-0"
+    >
+      <p>&copy; Madoudinette - 2025</p>
+    </footer>
   </body>
 </html>
