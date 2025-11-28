@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png" />
-    <title>Acceuil - Madoudinette</title>
+    <title>Accueil - Madoudinette</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -50,30 +50,50 @@
           <li
             class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-jaune-dore"
           >
-            <a href="./index.html">Acceuil</a>
+            <a href="./index.html"><strong>Accueil</strong></a>
           </li>
           <li
             class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            <a href="./catalogue.html">Catalogue</a>
+            <a href="./catalogue.html"><strong>Catalogue</strong></a>
           </li>
           <li
             class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            <a href="./culture.html">Culture & Bien-Fait</a>
+            <a href="./culture.html"><strong>Culture & Bien-fait</strong></a>
           </li>
           <li
             class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
           >
-            <a href="./contact.html">Contact</a>
+            <a href="./contact.html"><strong>Contact</strong></a>
           </li>
         </ul>
       </div>
     </nav>
+    <!-- Hero image directly under nav with overlay text -->
+    <div class="relative w-full h-64 md:h-96">
+      <img
+        src="./images/plat sae.png"
+        alt="photo_plat"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/10"
+      ></div>
+      <!-- Overlay text (edit the text below) -->
+      <div class="absolute inset-0 flex items-center justify-center px-4">
+        <h2
+          class="text-white text-3xl md:text-4xl font-display font-bold text-center"
+        >
+          Madoudinette
+        </h2>
+      </div>
+    </div>
     <main>
       <div class="max-w-3xl mx-auto aspect-video">
         <h3
-          class="text-marron-fonce text-4xl flex justify-center p-7 font-bold font-display"
+          class="text-marron-fonce text-4xl flex justify-center p-10 font-bold font-display"
         >
           Présentation
         </h3>
@@ -86,13 +106,16 @@
           loading="lazy"
         ></iframe>
       </div>
-      <div class="max-w-3xl mx-auto p-6 text-center">
+      <div class="max-w-3xl mx-auto p-14 text-center">
         <p class="text-base leading-relaxed">
           Madoudinette : marque fondée par une maman de cinq enfants, proposant
           des petits pots bio, halal et inspirés des saveurs africaines, pour
           répondre au manque de diversité, de culture et de respect des
           convictions dans l’alimentation infantile.
         </p>
+      </div>
+      <div>
+        <img src="" alt="" />
       </div>
     </main>
     <footer
