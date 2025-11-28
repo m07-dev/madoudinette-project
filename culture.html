@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Madoudinette — Culture & Bien-Fait</title>
+        <meta name="description" content="Pourquoi choisir nos produits — qualité, sécurité, durabilité. Projet Madoudinette." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "vert-olive": "#929f09",
+                            "orange-brul": "#e7820a",
+                            "jaune-dore": "#fab716",
+                            "marron-fonce": "#52300f",
+                            "fond-creme": "#FDF7EDCF",
+                        },
+                        fontFamily: {
+                            display: ["AC Soft Icecream Display", "cursive"],
+                            sans: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="flex flex-col min-h-screen bg-white text-gray-900">
+        <nav class="flex items-center justify-between bg-fond-creme p-4">
+            <div class="flex items-center space-x-5">
+                <img
+                    class="h-14 w-14 rounded-lg"
+                    src="./images/madoudinette logo.png"
+                    alt="madoudinette_logo"
+                />
+                <h1 class="font-display text-4xl text-marron-fonce">Madoudinette</h1>
+            </div>
+            <div>
+                <ul class="flex space-x-14 mr-14">
+                    <li class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-jaune-dore"><a href="./index.html">Acceuil</a></li>
+                    <li class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"><a href="./catalogue.html">Catalogue</a></li>
+                    <li class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"><a href="./culture.html">Culture & Bien-Fait</a></li>
+                    <li class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="flex-grow">
+            <section class="max-w-5xl mx-auto p-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2 p-6">
+                        <h2 class="text-2xl md:text-3xl font-display text-marron-fonce mb-2">Qualité, sécurité et simplicité</h2>
+                        <p class="text-gray-600 mb-4">Cette page décrit les choix réalisés dans le cadre du projet : matériaux sélectionnés, ergonomie et entretien facilité pour une utilisation quotidienne.</p>
+                        <a href="index.html" class="inline-block bg-vert-olive text-white px-4 py-2 rounded-md">En savoir plus sur le projet</a>
+                    </div>
+                    <div class="p-4 flex justify-center">
+                        <img class="w-full h-48 object-cover rounded-md shadow-sm" src="./images/plat_madoundinette.jpg" width='640' height='480' alt="Illustration produit du projet Madoudinette"/>
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-w-5xl mx-auto p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="bg-white p-5 rounded-lg shadow-sm" aria-labelledby="b1">
+                        <h3 id="b1" class="text-lg font-semibold text-marron-fonce mb-2">Matériaux choisis et sûrs</h3>
+                        <p class="text-gray-600">Utilisation de tissus et composants testés pour la sécurité et la tenue dans le temps. Moins de substances indésirables, plus de tranquillité d'esprit.</p>
+                    </article>
+
+                    <article class="bg-white p-5 rounded-lg shadow-sm" aria-labelledby="b2">
+                        <h3 id="b2" class="text-lg font-semibold text-marron-fonce mb-2">Confort et ergonomie</h3>
+                        <p class="text-gray-600">Design adapté aux gestes quotidiens et au confort de l'enfant et du parent : formes douces, coutures soignées et finitions confortables.</p>
+                    </article>
+
+                    <article class="bg-white p-5 rounded-lg shadow-sm" aria-labelledby="b3">
+                        <h3 id="b3" class="text-lg font-semibold text-marron-fonce mb-2">Durabilité et entretien facile</h3>
+                        <p class="text-gray-600">Produits conçus pour durer et faciles à nettoyer — moins de remplacements, moins de gaspillage et meilleur rapport qualité/prix sur la durée.</p>
+                    </article>
+
+                    <article class="bg-white p-5 rounded-lg shadow-sm" aria-labelledby="b4">
+                        <h3 id="b4" class="text-lg font-semibold text-marron-fonce mb-2">Respect de l'environnement</h3>
+                        <p class="text-gray-600">Choix de matériaux et procédés qui réduisent l'impact environnemental : moins d'emballage superflu, process responsables et durabilité au cœur du projet.</p>
+                    </article>
+
+                    <article class="bg-white p-5 rounded-lg shadow-sm" aria-labelledby="b5">
+                        <h3 id="b5" class="text-lg font-semibold text-marron-fonce mb-2">Fabrication locale et traçabilité</h3>
+                        <p class="text-gray-600">Priorité aux circuits courts et aux partenaires transparents pour soutenir l'économie locale et offrir une traçabilité claire des produits.</p>
+                    </article>
+
+                    <article class="bg-white p-5 rounded-lg shadow-sm" aria-labelledby="b6">
+                        <h3 id="b6" class="text-lg font-semibold text-marron-fonce mb-2">SAV et accompagnement</h3>
+                        <p class="text-gray-600">Service client simulé pour le projet, garantie et procédures simplifiées pour les besoins liés aux démonstrations et tests.</p>
+                    </article>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+                    <h3 class="text-xl font-semibold text-marron-fonce">En résumé</h3>
+                    <p class="text-gray-600">Le projet Madoudinette met en avant la qualité des matériaux, un design réfléchi, la durabilité et une démarche responsable. Ce contenu est fourni à titre informatif pour le cursus/projet.</p>
+                    <ul class="list-disc list-inside mt-3 text-gray-700">
+                        <li>Confort et sécurité</li>
+                        <li>Entretien et durabilité</li>
+                        <li>Responsabilité environnementale</li>
+                        <li>Soutien à la production locale</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-auto flex items-center justify-center bg-fond-creme p-4">
+            <p>&copy; Madoudinette - 2025</p>
+        </footer>
+    </body>
+</html>
