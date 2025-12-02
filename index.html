@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png" />
-    <title>Accueil - Madoudinette</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
       tailwind.config = {
         theme: {
@@ -25,111 +22,97 @@
               "fond-creme": "#FDF7EDCF",
             },
             fontFamily: {
-              // AJOUTEZ CETTE LIGNE POUR VOS TITRES :
               display: ["AC Soft Icecream Display", "cursive"],
-              // Conservez Montserrat pour le texte :
               sans: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
             },
           },
         },
       };
     </script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
+    <title>Accueil - Madoudinette</title>
   </head>
-  <body class="flex flex-col min-h-screen">
-    <nav class="flex items-center justify-between bg-vert-olive p-4">
+
+  <body class="flex flex-col min-h-screen bg-neutral-50">
+    
+    <nav class="flex items-center justify-between bg-vert-olive p-4 shadow-md">
       <div class="flex items-center space-x-5">
         <img
-          class="h-14 w-14 rounded-lg"
+          class="h-14 w-14 rounded-full border-2 border-fond-creme"
           src="./images/madoudinette logo.png"
           alt="madoudinette_logo"
         />
-        <h1 class="font-display text-4xl text-marron-fonce">Madoudinette</h1>
+        <h1 class="font-display text-4xl text-marron-fonce drop-shadow-sm">Madoudinette</h1>
       </div>
+      
       <div>
-        <ul class="flex space-x-14 mr-14">
-          <li
-            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-jaune-dore"
-          >
-            <a href="./index.html"><strong>Accueil</strong></a>
+        <ul class="flex space-x-10 mr-10 text-fond-creme font-bold text-lg">
+          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+            <a href="./index.html" class="text-marron-fonce">Accueil</a>
           </li>
-          <li
-            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-          >
-            <a href="./catalogue.html"><strong>Catalogue</strong></a>
+          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+            <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
           </li>
-          <li
-            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-          >
-            <a href="./culture.html"><strong>Culture & Bien-fait</strong></a>
+          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+            <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
           </li>
-          <li
-            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-          >
-            <a href="./contact.html"><strong>Contact</strong></a>
+          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+            <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
-    <!-- Hero image directly under nav with overlay text -->
-    <div class="relative w-full h-64 md:h-96">
+
+    <div class="relative w-full h-[500px]">
       <img
         src="./images/plat sae.png"
-        alt="photo_plat"
-        class="absolute inset-0 w-full h-full object-cover"
+        alt="Petits pots africains"
+      class="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/10"
-      ></div>
-      <!-- Overlay text (edit the text below) -->
-      <div
-        class="absolute inset-0 flex items-center justify-center px-4"
-        role="region"
-        aria-label="Hero text"
-      >
-        <div class="text-center max-w-3xl">
-          <h2
-            class="text-3xl md:text-4xl font-display font-bold mx-auto text-jaune-dore"
-          >
+      <div class="absolute inset-0 bg-black/40"></div>
+      
+      <div class="absolute inset-0 flex items-center justify-center px-4">
+        <div class="text-center max-w-4xl">
+          <h2 class="text-5xl md:text-6xl font-display font-bold text-jaune-dore drop-shadow-lg mb-4">
             Madoudinette
           </h2>
-          <p class="font-semibold mt-3 text-xl text-jaune-dore">
+          <p class="font-sans font-bold text-xl md:text-2xl text-white drop-shadow-md leading-relaxed">
             Les 1ers petits pots pour bébés inspirés des saveurs africaines,
-            halal et biologique.
+            halal et biologiques.
           </p>
+          <a href="./catalogue.html" class="inline-block mt-8 bg-orange-brul text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-jaune-dore transition duration-300">
+            Découvrir nos produits
+          </a>
         </div>
       </div>
     </div>
-    <main>
-      <div class="max-w-3xl mx-auto aspect-video">
-        <h3
-          class="text-marron-fonce text-4xl flex justify-center p-14 font-bold font-display"
-        >
+
+    <main class="container mx-auto px-4 py-12">
+      
+      <div class="max-w-4xl mx-auto mb-16">
+        <h3 class="text-marron-fonce text-4xl text-center mb-8 font-bold font-display">
           Présentation
         </h3>
-        <iframe
-          class="w-full h-full"
-          src="https://www.youtube-nocookie.com/embed/0saajiYGCRw?start=3&rel=0&modestbranding=1"
-          title="Vidéo Madoudinette"
-          frameborder="0"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <div class="aspect-video rounded-xl overflow-hidden shadow-xl">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube-nocookie.com/embed/0saajiYGCRw?start=3&rel=0&modestbranding=1"
+            title="Vidéo Madoudinette"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="mt-8 text-center max-w-2xl mx-auto">
+          <p class="text-lg text-gray-700 leading-relaxed font-medium pb-14 ">
+            Madoudinette : marque fondée par une maman de cinq enfants, proposant
+            des petits pots <span class="text-vert-olive font-bold">bio</span>, <span class="text-vert-olive font-bold">halal</span> et inspirés des <span class="text-orange-brul font-bold">saveurs africaines</span>, pour
+            répondre au manque de diversité dans l’alimentation infantile.
+          </p>
+        </div>
       </div>
-      <div class="max-w-3xl mx-auto p-14 text-center">
-        <p class="text-base leading-relaxed font-semibold">
-          Madoudinette : marque fondée par une maman de cinq enfants, proposant
-          des petits pots bio, halal et inspirés des saveurs africaines, pour
-          répondre au manque de diversité, de culture et de respect des
-          convictions dans l’alimentation infantile.
-        </p>
-      </div>
-      div
     </main>
-    <footer
-      class="mt-auto flex items-center justify-center bg-fond-creme p-4 space-y-0"
-    >
-      <p>&copy; Madoudinette - 2025</p>
-    </footer>
   </body>
-</html>
+</html> 
