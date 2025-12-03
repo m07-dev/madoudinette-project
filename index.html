@@ -19,7 +19,7 @@
               "orange-brul": "#e7820a",
               "jaune-dore": "#fab716",
               "marron-fonce": "#52300f",
-              "fond-creme": "#FDF7EDCF",
+              "fond-creme": "#ffd79d",
             },
             fontFamily: {
               display: ["AC Soft Icecream Display", "cursive"],
@@ -34,7 +34,7 @@
     <title>Accueil - Madoudinette</title>
   </head>
 
-  <body class="flex flex-col min-h-screen bg-neutral-50">
+  <body class="flex flex-col min-h-screen bg-fond-creme">
     
     <nav class="flex items-center justify-between bg-vert-olive p-4 shadow-md">
       <div class="flex items-center space-x-5">
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <main class="container mx-auto px-4 py-12">
+    <main class="container mx-auto px-4 py-12 bg-fond-creme">
       
       <div class="max-w-4xl mx-auto mb-16">
         <h3 class="text-marron-fonce text-4xl text-center mb-8 font-bold font-display">
@@ -113,6 +113,169 @@
           </p>
         </div>
       </div>
+      <section class="bg-fond-creme py-24">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+    Nos Valeurs
+  </h3>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+    
+    <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+      <img src="./images/bio.png" alt="bio" class="w-16 mx-auto mb-4">
+      <h4 class="text-xl font-bold text-vert-olive mb-2">100% Bio</h4>
+      <p class="text-gray-700 font-medium">
+        Des légumes frais, de saison, issus de l’agriculture biologique, sans pesticides, sans additifs ni conservateurs.
+      </p>
+    </div>
+
+    <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+      <img src="./images/halal.png" alt="halal" class="w-16 mx-auto mb-4">
+      <h4 class="text-xl font-bold text-vert-olive mb-2">Certifié Halal</h4>
+      <p class="text-gray-700 font-medium">
+        Des ingrédients 100 % halal, préparés avec rigueur et transparence, dans le respect de vos convictions et de l’environnement
+      </p>
+    </div>
+
+    <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
+      <img src="./images/afrique.png" alt="saveurs africaines" class="w-16 mx-auto mb-4">
+      <h4 class="text-xl font-bold text-vert-olive mb-2">Saveurs du Monde</h4>
+      <p class="text-gray-700 font-medium">
+        Des recettes inspirées du monde, adaptées aux tout-petits, pour éveiller leurs papilles à la diversité culinaire.
+      </p>
+    </div>
+
+  </div>
+</section>
+<section class="py-24">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+    Nos Recettes Phare
+  </h3>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+    
+    <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+      <img src="./images/recette1.jpg" class="w-full h-56 object-cover" alt="">
+      <div class="p-5 bg-white">
+        <h4 class="text-xl font-bold text-orange-brul">Poulet & Patate Douce</h4>
+      </div>
+    </div>
+
+    <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+      <img src="./images/recette2.jpg" class="w-full h-56 object-cover" alt="">
+      <div class="p-5 bg-white">
+        <h4 class="text-xl font-bold text-orange-brul">Mil & Banane Plantain</h4>
+      </div>
+    </div>
+
+    <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+      <img src="./images/recette3.jpg" class="w-full h-56 object-cover" alt="">
+      <div class="p-5 bg-white">
+        <h4 class="text-xl font-bold text-orange-brul">Légumes du Sahel</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="py-24 bg-neutral-50">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+    Ce que nos clients pensent de nous
+  </h3>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+    <!-- Témoignage 1 -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
+      <p class="text-gray-700 text-lg italic mb-6">
+        “Je suis vraiment ravie d’avoir découvert Madidounette. Mon bébé adore leurs recettes, et moi je suis bluffée par la diversité des saveurs proposées. On est loin des goûts classiques qu’on retrouve partout !.”
+      </p>
+      <div class="mt-auto flex items-center gap-4">
+        <img src="./images/woman_1.webp" class="w-14 h-14 rounded-full object-cover" alt="">
+        <div>
+          <p class="font-bold text-marron-fonce">Aminata Diop</p>
+          <p class="text-sm text-orange-brul font-medium">Maman d’une petite fille</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Témoignage 2 -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
+      <p class="text-gray-700 text-lg italic mb-6">
+        “Les repas sont équilibrés, savoureux, et surtout adaptés aux besoins des tout-petits. En tant que parent, c’est rassurant de savoir que tout est fait dans le respect des normes. Un vrai gain de sérénité.”
+      </p>
+      <div class="mt-auto flex items-center gap-4">
+        <img src="./images/woman_2.webp" class="w-14 h-14 rounded-full object-cover" alt="">
+        <div>
+          <p class="font-bold text-marron-fonce">Fatoumata Traouré</p>
+          <p class="text-sm text-orange-brul font-medium">Maman de deux enfants</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Témoignage 3 -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
+      <p class="text-gray-700 text-lg italic mb-6">
+        “Un concept utile, fiable, et vraiment pratique pour les repas de bébé. On apprécie l’aspect sain, halal et la transparence sur la composition. Idéal pour les familles soucieuses de bien faire.”
+      </p>
+      <div class="mt-auto flex items-center gap-4">
+        <img src="./images/men_smile1.webp" class="w-14 h-14 rounded-full object-cover" alt="">
+        <div>
+          <p class="font-bold text-marron-fonce">Bachir Itachir</p>
+          <p class="text-sm text-orange-brul font-medium">Parent satisfait</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
+  <footer class="bg-vert-olive text-fond-creme pt-14 pb-8 mt-20">
+  <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+    <div>
+      <div class="flex items-center space-x-4 mb-4">
+        <img src="./images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
+        <h2 class="font-display text-3xl font-bold text-jaune-dore">Madoudinette</h2>
+      </div>
+      <p class="text-fond-creme/90 leading-relaxed font-medium">
+        Les premiers petits pots pour bébés inspirés des saveurs africaines, 
+        biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-xl font-bold text-marron-fonce mb-4">Liens utiles</h3>
+      <ul class="space-y-2 text-fond-creme/90 font-medium">
+        <li><a href="./index.html" class="hover:text-jaune-dore transition">Accueil</a></li>
+        <li><a href="./catalogue.html" class="hover:text-jaune-dore transition">Catalogue</a></li>
+        <li><a href="./culture.html" class="hover:text-jaune-dore transition">Culture & Bienfaits</a></li>
+        <li><a href="./contact.html" class="hover:text-jaune-dore transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold text-marron-fonce mb-4">Contact</h3>
+      <ul class="text-fond-creme/90 space-y-2 font-medium">
+        <li>📍 France</li>
+        <li>📧 contact@madoudinette.com</li>
+        <li>📱 06 00 00 00 00</li>
+      </ul>
+
+      <div class="flex space-x-4 mt-4">
+        <a href="#" class="hover:scale-110 transition">
+          <img src="./images/instagram.png" alt="insta" class="w-8">
+        </a>
+        <a href="#" class="hover:scale-110 transition">
+          <img src="./images/facebook.png" alt="fb" class="w-8">
+        </a>
+        <a href="#" class="hover:scale-110 transition">
+          <img src="./images/tiktok.png" alt="tiktok" class="w-8">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="border-t border-fond-creme/50 mt-10 pt-5 text-center text-sm text-fond-creme/80">
+    © 2025 Madoudinette — Tous droits réservés.
+  </div>
+</footer>
+
   </body>
 </html> 
