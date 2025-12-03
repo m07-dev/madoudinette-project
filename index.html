@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="./js/main.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
@@ -35,7 +37,8 @@
   </head>
 
   <body class="flex flex-col min-h-screen bg-fond-creme">
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js"></script>
     <nav class="flex items-center justify-between bg-vert-olive p-4 shadow-md">
       <div class="flex items-center space-x-5">
         <img
@@ -113,7 +116,94 @@
           </p>
         </div>
       </div>
-      <section class="bg-fond-creme py-24">
+    <section class="bg-fond-creme py-24">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+    Nos Produits
+  </h3>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+    <!-- Carte 1 -->
+    <div class="bg-white rounded-2xl shadow-xl border-4 border-fond-creme overflow-hidden flex flex-col">
+      <div class="h-48 overflow-hidden bg-gray-100">
+        <img src="./images/png" alt="Douceur Patate Douce" 
+             class="w-full h-full object-cover hover:scale-110 transition duration-500">
+      </div>
+
+      <div class="p-6 flex flex-col flex-grow">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-jaune-dore text-marron-fonce mb-3">
+          👶 Dès 4 mois • En stock
+        </span>
+
+        <strong class="font-display text-2xl text-vert-olive mb-2">
+          Douceur Patate Douce
+        </strong>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Une texture ultra lisse et un goût naturellement sucré pour éveiller bébé en douceur. Riche en vitamines A.
+        </p>
+
+        <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
+          Voir les détails →
+        </button>
+      </div>
+    </div>
+
+    <!-- Carte 2 -->
+    <div class="bg-white rounded-2xl shadow-xl border-4 border-fond-creme overflow-hidden flex flex-col">
+      <div class="h-48 bg-fond-creme/50 flex items-center justify-center text-marron-fonce">
+        Image à venir
+      </div>
+
+      <div class="p-6 flex flex-col flex-grow">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-200 text-gray-600 mb-3">
+          👶 Dès 6 mois • Rupture
+        </span>
+
+        <strong class="font-display text-2xl text-vert-olive mb-2">
+          Banane Plantain
+        </strong>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Le dessert préféré des bébés ! Une purée onctueuse qui apporte de l'énergie pour toute la journée.
+        </p>
+
+        <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
+          Voir les détails →
+        </button>
+      </div>
+    </div>
+
+    <!-- Carte 3 -->
+    <div class="bg-white rounded-2xl shadow-xl border-4 border-fond-creme overflow-hidden flex flex-col">
+      <div class="h-48 bg-fond-creme/50 flex items-center justify-center text-marron-fonce">
+        Image à venir
+      </div>
+
+      <div class="p-6 flex flex-col flex-grow">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-jaune-dore text-marron-fonce mb-3">
+          👶 Dès 8 mois • En stock
+        </span>
+
+        <strong class="font-display text-2xl text-vert-olive mb-2">
+          Mon Premier Mafé
+        </strong>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Initiation aux saveurs du Mali avec une recette douce sans morceaux d'arachide et du poulet fermier.
+        </p>
+
+        <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
+          Voir les détails →
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <section class="bg-fond-creme py-24">
   <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
     Nos Valeurs
   </h3>
@@ -142,36 +232,6 @@
       <p class="text-gray-700 font-medium">
         Des recettes inspirées du monde, adaptées aux tout-petits, pour éveiller leurs papilles à la diversité culinaire.
       </p>
-    </div>
-
-  </div>
-</section>
-<section class="py-24">
-  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
-    Nos Recettes Phare
-  </h3>
-
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-    
-    <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
-      <img src="./images/recette1.jpg" class="w-full h-56 object-cover" alt="">
-      <div class="p-5 bg-white">
-        <h4 class="text-xl font-bold text-orange-brul">Poulet & Patate Douce</h4>
-      </div>
-    </div>
-
-    <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
-      <img src="./images/recette2.jpg" class="w-full h-56 object-cover" alt="">
-      <div class="p-5 bg-white">
-        <h4 class="text-xl font-bold text-orange-brul">Mil & Banane Plantain</h4>
-      </div>
-    </div>
-
-    <div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
-      <img src="./images/recette3.jpg" class="w-full h-56 object-cover" alt="">
-      <div class="p-5 bg-white">
-        <h4 class="text-xl font-bold text-orange-brul">Légumes du Sahel</h4>
-      </div>
     </div>
 
   </div>
