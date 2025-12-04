@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="./js/main.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script src="./js/main.js"></script>
+</body>
+</html>
     <script>
       tailwind.config = {
         theme: {
@@ -38,7 +39,6 @@
 
   <body class="flex flex-col min-h-screen bg-fond-creme">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
     <nav class="flex items-center justify-between bg-vert-olive p-4 shadow-md">
       <div class="flex items-center space-x-5">
         <img
@@ -135,7 +135,7 @@
           👶 Dès  6 mois • En stock
         </span>
 
-        <strong class="font-display text-2xl text-vert-olive mb-2">
+        <strong class="font-display text-2xl text-marron-fonce mb-2">
           Mafé Bœuf
         </strong>
 
@@ -161,7 +161,7 @@
         👶 Dès 6 mois • En stock
         </span>
 
-        <strong class="font-display text-2xl text-vert-olive mb-2">
+        <strong class="font-display text-2xl text-marron-fonce mb-2">
           Yassa Poulet
         </strong>
 
@@ -187,7 +187,7 @@
           👶 Dès 6 mois • En stock
         </span>
 
-        <strong class="font-display text-2xl text-vert-olive mb-2">
+        <strong class="font-display text-2xl text-marron-fonce mb-2">
           Thieb poisson
         </strong>
 
@@ -205,37 +205,55 @@
 </section>
 
 
-    <section class="bg-fond-creme py-24">
+<section class="bg-fond-creme py-24 overflow-hidden">
   <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
     Nos Valeurs
   </h3>
 
-  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-    
-    <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
-      <img src="./images/bio.png" alt="bio" class="w-16 mx-auto mb-4">
-      <h4 class="text-xl font-bold text-vert-olive mb-2">100% Bio</h4>
-      <p class="text-gray-700 font-medium">
-        Des légumes frais, de saison, issus de l’agriculture biologique, sans pesticides, sans additifs ni conservateurs.
-      </p>
-    </div>
+  <div class="carousel-container">
+    <div class="carousel__content">
+      
+      <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
+        <div class="mb-6 h-20 flex items-center justify-center">
+          <img src="./images/bio.png" alt="Ingrédients frais" class="max-h-full max-w-full">
+        </div>
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Ingrédients frais</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+          Légumes bio, céréales africaines et viandes halal. Sans additifs, juste l'essentiel pour bien grandir.
+        </p>
+      </article>
 
-    <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
-      <img src="./images/halal.png" alt="halal" class="w-16 mx-auto mb-4">
-      <h4 class="text-xl font-bold text-vert-olive mb-2">Certifié Halal</h4>
-      <p class="text-gray-700 font-medium">
-        Des ingrédients 100 % halal, préparés avec rigueur et transparence, dans le respect de vos convictions et de l’environnement
-      </p>
-    </div>
+      <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
+        <div class="mb-6 h-20 flex items-center justify-center">
+          <img src="./images/halal.png" alt="Palette riche" class="max-h-full max-w-full">
+        </div>
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Palette riche</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+          Des recettes aux saveurs du monde pour éveiller la curiosité et transmettre un patrimoine riche.
+        </p>
+      </article>
 
-    <div class="text-center p-6 bg-white rounded-2xl shadow-lg">
-      <img src="./images/afrique.png" alt="saveurs africaines" class="w-16 mx-auto mb-4">
-      <h4 class="text-xl font-bold text-vert-olive mb-2">Saveurs du Monde</h4>
-      <p class="text-gray-700 font-medium">
-        Des recettes inspirées du monde, adaptées aux tout-petits, pour éveiller leurs papilles à la diversité culinaire.
-      </p>
-    </div>
+      <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
+        <div class="mb-6 h-20 flex items-center justify-center">
+          <img src="./images/afrique.png" alt="Saine et sûre" class="max-h-full max-w-full">
+        </div>
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Saine et sûre</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+          Validées par des nutritionnistes, nos recettes 100% naturelles aux super-aliments sont sûres pour bébé.
+        </p>
+      </article>
 
+      <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
+        <div class="mb-6 h-20 flex items-center justify-center">
+          <img src="./images/bio.png" alt="Durabilité" class="max-h-full max-w-full">
+        </div>
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Durabilité</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+          Ingrédients bio et équitables, soutien aux producteurs africains et emballages écoresponsables.
+        </p>
+      </article>
+
+    </div>
   </div>
 </section>
 <section class="py-24 bg-neutral-50">
@@ -320,13 +338,13 @@
       </ul>
 
       <div class="flex space-x-4 mt-4">
-        <a href="#" class="hover:scale-110 transition">
+        <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition">
           <img src="./images/instagram.png" alt="insta" class="w-8">
         </a>
-        <a href="#" class="hover:scale-110 transition">
+        <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" class="hover:scale-110 transition">
           <img src="./images/facebook.png" alt="fb" class="w-8">
         </a>
-        <a href="#" class="hover:scale-110 transition">
+        <a href="https://www.tiktok.com/@madoudinette" class="hover:scale-110 transition">
           <img src="./images/tiktok.png" alt="tiktok" class="w-8">
         </a>
       </div>
