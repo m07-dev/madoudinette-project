@@ -1,54 +1,52 @@
 
-console.log('madou accordion script loaded');
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('madou-accordion');
-    if (!container) return;
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector('.carousel__content');
+    
+    // Sécurité : si la section n'existe pas sur la page, on arrête.
+    if (!track) return;
 
-    const triggers = Array.from(container.querySelectorAll('.accordion-trigger'));
-    const panels = Array.from(container.querySelectorAll('.accordion-panel'));
+    // 1) On récupère les cartes originales
+    const originalCards = Array.from(track.children);
 
-    function closeAll() {
-        triggers.forEach(t => t.setAttribute('aria-expanded', 'false'));
-        panels.forEach(p => { p.setAttribute('data-open', 'false'); p.setAttribute('aria-hidden', 'true'); });
-    }
-
-    container.addEventListener('click', function (e) {
-        const btn = e.target.closest('.accordion-trigger');
-        if (!btn) return;
-        const panelId = btn.getAttribute('aria-controls');
-        const panel = document.getElementById(panelId);
-        if (!panel) return;
-
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        if (isOpen) {
-            btn.setAttribute('aria-expanded', 'false');
-            panel.setAttribute('data-open', 'false');
-            panel.setAttribute('aria-hidden', 'true');
-        } else {
-            closeAll();
-            btn.setAttribute('aria-expanded', 'true');
-            panel.setAttribute('data-open', 'true');
-            panel.setAttribute('aria-hidden', 'false');
-        }
+    // 2) On clone chaque carte et on l'ajoute à la fin
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true'); // Bonne pratique pour l'accessibilité
+      track.appendChild(clone);
     });
 
-    container.addEventListener('keydown', function (e) {
-        const key = e.key;
-        const active = document.activeElement;
-        if (!active || !active.classList.contains('accordion-trigger')) return;
-        const idx = triggers.indexOf(active);
-        if (idx === -1) return;
+    // 3) Fonction pour calculer la largeur totale du "set original"
+    // C'est ce qui permet à l'animation de savoir exactement quand boucler.
+    const computeWidth = () => {
+      // On prend seulement les cartes originales (la première moitié)
+      const set = Array.from(track.children).slice(0, originalCards.length);
+      
+      let total = 0;
+      set.forEach(el => {
+        const style = window.getComputedStyle(el);
+        // On inclut la marge droite (le fameux mr-8 de Tailwind) dans le calcul
+        const marginRight = parseFloat(style.marginRight) || 0;
+        total += el.offsetWidth + marginRight;
+      });
+      return total;
+    };
 
-        if (key === 'ArrowDown') {
-            e.preventDefault();
-            const next = triggers[(idx + 1) % triggers.length]; next.focus();
-        } else if (key === 'ArrowUp') {
-            e.preventDefault();
-            const prev = triggers[(idx - 1 + triggers.length) % triggers.length]; prev.focus();
-        } else if (key === 'Home') {
-            e.preventDefault(); triggers[0].focus();
-        } else if (key === 'End') {
-            e.preventDefault(); triggers[triggers.length - 1].focus();
-        }
+    // On calcule et on applique la variable CSS
+    const scrollWidth = computeWidth();
+    track.style.setProperty('--scroll-width', scrollWidth + 'px');
+
+    // 4) Ajuste la durée selon la largeur (Vitesse constante)
+    // Plus il y a de cartes, plus le temps augmente pour garder la même vitesse de défilement
+    const speed = 60; // Pixels par seconde (ajustez ce chiffre pour aller +/- vite)
+    const duration = scrollWidth / speed;
+    track.style.setProperty('--animation-duration', duration + 's');
+
+    // 5) Recalcul automatique si on redimensionne la fenêtre
+    window.addEventListener('resize', () => {
+      const newW = computeWidth();
+      track.style.setProperty('--scroll-width', newW + 'px');
+      const newD = newW / speed;
+      track.style.setProperty('--animation-duration', newD + 's');
     });
-});
+  });
+

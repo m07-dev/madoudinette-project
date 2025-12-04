@@ -15,3 +15,51 @@
 :root {
     /* ... vos couleurs existantes ... */
 }
+
+/* --- Carousel Template Logic --- */
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  /* Optionnel : Masque dégradé pour adoucir les bords */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.carousel__content {
+  display: flex;
+  width: max-content; /* S'adapte au contenu */
+  /* L'animation est configurée ici mais pilotée par les variables JS */
+  animation-name: scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--animation-duration, 20s); /* Valeur par défaut si JS échoue */
+  transform: translateX(0);
+}
+
+/* On enlève la marge droite du tout dernier élément pour que le calcul soit précis */
+.carousel__card:last-child {
+  margin-right: 2rem;
+}
+
+.carousel__card:hover {
+  transform: scale(0.95); /* Petit effet de zoom au survol */
+}
+
+.carousel__content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Le JS va injecter la largeur exacte à parcourir ici */
+    transform: translateX(calc(var(--scroll-width) * -1));
+  }
+}
+
+.carousel__content:hover {
+  animation-play-state: paused;
+}
