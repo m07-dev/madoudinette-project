@@ -49,4 +49,3 @@
       track.style.setProperty('--animation-duration', newD + 's');
     });
   });
-
