@@ -37,32 +37,60 @@
     <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
     <title>Accueil - Madoudinette</title>
   </head>
-
   <body class="flex flex-col min-h-screen bg-fond-creme">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <nav class="flex items-center justify-between bg-vert-olive p-4 shadow-md">
-      <div class="flex items-center space-x-5">
-        <img
-          class="h-14 w-14 rounded-full border-2 border-fond-creme"
-          src="./images/madoudinette logo.png"
-          alt="madoudinette_logo"
-        />
-        <h1 class="font-display text-4xl text-marron-fonce drop-shadow-sm">Madoudinette</h1>
+    <nav class="bg-vert-olive p-4 shadow-md relative z-50">
+      <div class="container mx-auto flex items-center justify-between">
+
+        <div class="flex items-center space-x-3 md:space-x-5">
+          <img
+                  class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
+                  src="./images/madoudinette logo.png"
+                  alt="madoudinette_logo"
+          />
+          <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm transition-all duration-300">
+            Madoudinette
+          </h1>
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <div class="hidden md:flex">
+          <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./index.html" class="text-marron-fonce">Accueil</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
-      
-      <div>
-        <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vert-olive shadow-lg border-t border-white/20">
+        <ul class="flex flex-col items-center py-4 space-y-4 text-white font-bold text-base">
+          <li class="w-full text-center hover:bg-white/10 py-2">
             <a href="./index.html" class="text-marron-fonce">Accueil</a>
           </li>
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-            <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./catalogue.html" class="hover:text-jaune-dore">Catalogue</a>
           </li>
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-            <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./culture.html" class="hover:text-jaune-dore">Culture & Bienfaits</a>
           </li>
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-            <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./contact.html" class="hover:text-jaune-dore">Contact</a>
           </li>
         </ul>
       </div>
