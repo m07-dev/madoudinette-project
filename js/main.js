@@ -54,11 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. GESTION DE LA TRADUCTION (FR / EN)
   // =========================================
   
-  // Fonction pour appliquer la langue
   function changeLanguage(lang) {
-    console.log("Changement de langue vers :", lang); // Pour vérifier dans la console
-    
-    // Sauvegarde du choix
+    // Sauvegarde
     localStorage.setItem('selectedLang', lang);
 
     // Mise à jour des textes
@@ -68,28 +65,48 @@ document.addEventListener("DOMContentLoaded", () => {
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
           element.placeholder = translations[lang][key];
         } else {
-          // Utilise innerHTML pour garder le gras éventuel, sinon innerText
           element.innerHTML = translations[lang][key];
         }
       }
     });
 
-    // Mise à jour visuelle des boutons (Gras pour la langue active)
-    updateActiveButton(lang);
+    // Mise à jour visuelle des boutons (Desktop ET Mobile)
+    updateActiveButtons(lang);
   }
 
-  function updateActiveButton(lang) {
-    const btnFr = document.getElementById('lang-fr');
-    const btnEn = document.getElementById('lang-en');
-    
-    if (btnFr && btnEn) {
-        // Reset style
-        btnFr.style.opacity = "0.6";
-        btnEn.style.opacity = "0.6";
-        
-        // Active style
-        if (lang === 'fr') btnFr.style.opacity = "1";
-        if (lang === 'en') btnEn.style.opacity = "1";
+  function updateActiveButtons(lang) {
+    // Liste de tous les boutons (Desktop et Mobile)
+    const buttons = {
+        fr: [document.getElementById('lang-fr'), document.getElementById('mobile-lang-fr')],
+        en: [document.getElementById('lang-en'), document.getElementById('mobile-lang-en')]
+    };
+
+    // On réinitialise tout le monde (transparence)
+    [...buttons.fr, ...buttons.en].forEach(btn => {
+        if(btn) {
+            btn.style.opacity = "0.6";
+            btn.style.fontWeight = "normal";
+            // Pour le mobile, on peut gérer le fond
+            if(btn.id.includes('mobile')) {
+                 btn.classList.remove('bg-white', 'text-marron-fonce');
+                 btn.classList.add('text-white');
+            }
+        }
+    });
+
+    // On active ceux de la langue choisie
+    if (buttons[lang]) {
+        buttons[lang].forEach(btn => {
+            if(btn) {
+                btn.style.opacity = "1";
+                btn.style.fontWeight = "bold";
+                // Style spécifique mobile actif
+                if(btn.id.includes('mobile')) {
+                    btn.classList.add('bg-white', 'text-marron-fonce');
+                    btn.classList.remove('text-white');
+                }
+            }
+        });
     }
   }
 
@@ -97,23 +114,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem('selectedLang') || 'fr';
   changeLanguage(savedLang);
 
-  // Écouteurs sur les boutons
-  const btnFr = document.getElementById('lang-fr');
-  const btnEn = document.getElementById('lang-en');
+  // --- ÉCOUTEURS D'ÉVÉNEMENTS (Desktop & Mobile) ---
+  
+  // Fonction pour attacher l'événement click
+  const attachClick = (id, lang) => {
+      const el = document.getElementById(id);
+      if (el) {
+          el.addEventListener('click', (e) => {
+              e.preventDefault();
+              changeLanguage(lang);
+              // Optionnel : fermer le menu mobile après choix
+              if(id.includes('mobile') && menu) {
+                  menu.classList.add('hidden');
+              }
+          });
+      }
+  };
 
-  if (btnFr) {
-      btnFr.addEventListener('click', (e) => {
-          e.preventDefault();
-          changeLanguage('fr');
-      });
-  }
-
-  if (btnEn) {
-      btnEn.addEventListener('click', (e) => {
-          e.preventDefault();
-          changeLanguage('en');
-      });
-  }
+  attachClick('lang-fr', 'fr');
+  attachClick('lang-en', 'en');
+  attachClick('mobile-lang-fr', 'fr');
+  attachClick('mobile-lang-en', 'en');
 
 });
 
@@ -151,17 +172,17 @@ const translations = {
     "val_sustain_title": "Durabilité",
     "val_sustain_desc": "Ingrédients bio et équitables, soutien aux producteurs africains et emballages écoresponsables.",
     "testimonials_title": "Ce que nos clients pensent de nous",
-    "review_1": "Je suis vraiment ravie d’avoir découvert Madidounette. Mon bébé adore leurs recettes, et moi je suis bluffée par la diversité des saveurs proposées. On est loin des goûts classiques qu’on retrouve partout !.",
-    "review_2": "Les repas sont équilibrés, savoureux, et surtout adaptés aux besoins des tout-petits. En tant que parent, c’est rassurant de savoir que tout est fait dans le respect des normes. Un vrai gain de sérénité.",
-    "review_3": "Un concept utile, fiable, et vraiment pratique pour les repas de bébé. On apprécie l’aspect sain, halal et la transparence sur la composition. Idéal pour les familles soucieuses de bien faire.",
+    "review_1": "Je suis vraiment ravie d’avoir découvert Madidounette. Mon bébé adore leurs recettes, et moi je suis bluffée par la diversité des saveurs proposées.",
+    "review_2": "Les repas sont équilibrés, savoureux, et surtout adaptés aux besoins des tout-petits. En tant que parent, c’est rassurant.",
+    "review_3": "Un concept utile, fiable, et vraiment pratique pour les repas de bébé. On apprécie l’aspect sain, halal et la transparence.",
     "tag_6m": "Dès 6 mois",
     "tag_8m": "Dès 8 mois",
     "prod_mafe_title": "Mafé Bœuf",
     "prod_mafe_desc_short": "Un grand classique d’Afrique de l’Ouest revisité. Bœuf tendre, pâte d'arachide douce et petits légumes.",
     "prod_yassa_title": "Yassa Poulet",
-    "prod_yassa_desc_short": "Une recette saine et gourmande du célèbre Yassa sénégalais, adaptée aux bébés dès 6 mois, alliant tradition culinaire et apports essentiels pour grandir en douceur.",
+    "prod_yassa_desc_short": "La célèbre recette sénégalaise aux oignons caramélisés et citron vert, adoucie pour bébé.",
     "prod_thieb_title": "Thieb Poisson",
-    "prod_thieb_desc_short": "Un plat inspiré du traditionnel Tcheboudienne Sénégalais, revisité pour bébé dès 6 mois. Savoureux et équilibré, il répond aux besoins nutritionnels des tout-petits.",
+    "prod_thieb_desc_short": "Riz rouge aux légumes et colin d'Alaska. Une explosion de saveurs douces et iodées.",
 
     // --- CATALOGUE ---
     "cat_header_title": "Nos Petits Pots",
@@ -207,8 +228,17 @@ const translations = {
     "mafe_ing_veg": "Carottes bio, Pommes de terre bio, Oignons.",
     "mafe_ing_prot": "Bœuf Halal (origine France).",
     "mafe_ing_sauce": "Eau de cuisson, Pâte d'arachide bio (5%).",
-    
-    // Ajoutez ici les autres traductions manquantes si nécessaire
+
+    // --- CONTACT PAGE ---
+    "contact_header_title": "Contactez-nous",
+    "contact_header_desc": "Une question sur nos produits, une suggestion ou juste envie de dire bonjour ? L'équipe Madoudinette est à votre écoute.",
+    "contact_info_title": "Nos Coordonnées",
+    "contact_form_title": "Envoyez-nous un message",
+    "form_label_name": "Votre Nom",
+    "form_label_email": "Votre Email",
+    "form_label_subject": "Sujet",
+    "form_label_message": "Votre Message",
+    "form_btn_send": "Envoyer mon message",
   },
 
   en: {
@@ -241,17 +271,17 @@ const translations = {
     "val_sustain_title": "Sustainability",
     "val_sustain_desc": "Organic and fair-trade ingredients, support for African producers, and eco-friendly packaging.",
     "testimonials_title": "What our customers say",
-    "review_1": "I'm so glad I discovered Madidounette. My baby loves their recipes, and I'm blown away by the variety of flavors they offer. They're nothing like the usual tastes you find everywhere!",
-    "review_2": "The meals are balanced, tasty, and above all, tailored to the needs of toddlers. As a parent, it's reassuring to know that everything is done according to regulations. A real peace of mind.",
-    "review_3": "A useful, reliable, and truly practical concept for baby food. We appreciate its healthy, halal aspect and the transparency regarding its ingredients. Ideal for families who care about doing things right.",
+    "review_1": "I am truly delighted to have discovered Madoudinette. My baby loves their recipes, and I am amazed by the diversity of flavors offered.",
+    "review_2": "The meals are balanced, tasty, and above all adapted to the needs of toddlers. As a parent, it's reassuring.",
+    "review_3": "A useful, reliable, and truly practical concept for baby meals. We appreciate the healthy, halal aspect and transparency.",
     "tag_6m": "From 6 months",
     "tag_8m": "From 8 months",
     "prod_mafe_title": "Beef Mafe",
-    "prod_mafe_desc_short": "A classic West African dish with a twist. Tender beef, sweet peanut paste and baby vegetables.",
+    "prod_mafe_desc_short": "A West African classic revisited. Tender beef, mild peanut paste, and small vegetables.",
     "prod_yassa_title": "Chicken Yassa",
-    "prod_yassa_desc_short": "A healthy and delicious recipe for the famous Senegalese Yassa, adapted for babies from 6 months old, combining culinary tradition and essential nutrients for gentle growth.",
+    "prod_yassa_desc_short": "The famous Senegalese recipe with caramelized onions and lime, softened for baby.",
     "prod_thieb_title": "Fish Thieb",
-    "prod_thieb_desc_short": "A dish inspired by the traditional Senegalese Thieboudienne, adapted for babies from 6 months old. Tasty and balanced, it meets the nutritional needs of toddlers.",
+    "prod_thieb_desc_short": "Red rice with vegetables and Alaskan pollock. An explosion of gentle and iodized flavors.",
 
     // --- CATALOGUE ---
     "cat_header_title": "Our Baby Jars",
@@ -296,6 +326,17 @@ const translations = {
     "prod_mafe_desc_long": "Take baby's taste buds on a journey with this West African classic!",
     "mafe_ing_veg": "Organic carrots, Organic potatoes, Onions.",
     "mafe_ing_prot": "Halal Beef (origin: France).",
-    "mafe_ing_sauce": "Cooking water, Organic peanut paste (5%)."
+    "mafe_ing_sauce": "Cooking water, Organic peanut paste (5%).",
+
+    // --- CONTACT PAGE ---
+    "contact_header_title": "Contact Us",
+    "contact_header_desc": "A question about our products, a suggestion, or just want to say hello? The Madoudinette team is here to listen.",
+    "contact_info_title": "Our Contact Details",
+    "contact_form_title": "Send us a message",
+    "form_label_name": "Your Name",
+    "form_label_email": "Your Email",
+    "form_label_subject": "Subject",
+    "form_label_message": "Your Message",
+    "form_btn_send": "Send my message",
   }
 };
