@@ -1,4 +1,4 @@
-/* Variables de couleurs */
+/* Variables de couleurs  */
 :root {
     --vert-olive: #929f09;
     --orange-brul: #e7820a;
@@ -15,6 +15,7 @@
 }
 
 
+/* MAIN CONTENT */
 main {
     max-width: 1000px;
     margin: 60px auto;
@@ -66,6 +67,20 @@ main {
     text-decoration: underline;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        margin-right: 0 !important;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     main {
         padding: 30px;
         margin: 30px auto;
@@ -74,3 +89,4 @@ main {
     .banner {
         max-width: 100%;
     }
+}
