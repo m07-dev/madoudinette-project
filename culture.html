@@ -12,8 +12,9 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="./css/style.css" />
-        <link rel="icon" type="image/x-icon" href="/images/madoudinette logo.png" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/main.js"></script>
         <script>
             tailwind.config = {
                 theme: {
@@ -42,28 +43,64 @@
             #madou-accordion input[type="radio"] { position: absolute; left: -9999px; }
             #madou-accordion .card { transition: background .2s ease; }
 
-            #madou-accordion .panel { display: none; max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0; transition: max-height .3s ease, padding .2s ease; }
+            #madou-accordion .panel {
+                max-height: 0;
+                overflow: hidden;
+                padding-top: 0;
+                padding-bottom: 0;
+                opacity: 0;
+                transform: translateY(-6px);
+                transition: max-height 420ms cubic-bezier(.2,.9,.2,1),
+                            opacity 220ms ease,
+                            transform 300ms ease,
+                            padding 220ms ease;
+                will-change: max-height, opacity, transform;
+                background-color: transparent;
+                border-top-color: transparent;
+            }
 
             #madou-accordion input[type="radio"]:checked + .card .label-closed { display: none; }
             #madou-accordion input[type="radio"]:checked + .card .label-open { display: flex; }
-            #madou-accordion input[type="radio"]:checked + .card .panel { display: block; max-height: 800px; padding-top: 1.5rem; padding-bottom: 1.5rem; background-color: rgba(231,130,10,0.14); border-top-color: rgba(255,255,255,0.06); box-shadow: inset 0 1px 0 rgba(255,255,255,0.03); }
+            #madou-accordion input[type="radio"]:checked + .card .panel {
+                max-height: 800px;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+                opacity: 1;
+                transform: translateY(0);
+                background-color: rgba(231,130,10,0.14);
+                border-top-color: rgba(255,255,255,0.06);
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+            }
 
             #madou-accordion .label-open { display: none; }
 
             #madou-accordion input[type="radio"]:checked + .card svg { transform: rotate(180deg); }
 
             .accordion-trigger:focus { outline: 3px solid rgba(255,255,255,0.15); outline-offset: 2px; }
+
+            @keyframes fadeUp {
+                from { opacity: 0; transform: translateY(10px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .reveal { opacity: 0; transform: translateY(10px); animation: fadeUp 420ms cubic-bezier(.2,.9,.2,1) forwards; }
+            .reveal.delay-1 { animation-delay: 120ms; }
+            .reveal.delay-2 { animation-delay: 240ms; }
+            .reveal.delay-3 { animation-delay: 360ms; }
+            .founder-frame { border-radius: 0.5rem; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.12); background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(253,247,237,0.9)); }
+            .founder-frame img { display: block; width:100%; height:100%; object-fit:cover; }
+            .founder-frame:hover { transform: translateY(-6px) scale(1.02); transition: transform .28s ease; }
+            .founder-link { display: inline-block; cursor: pointer; }
         </style>
     </head>
     <body class="flex flex-col min-h-screen bg-white text-gray-900">
-        <nav class="bg-vert-olive p-4 shadow-md relative z-50">
+                <nav class="bg-vert-olive p-4 shadow-md relative z-50">
             <div class="container mx-auto flex items-center justify-between">
 
                 <div class="flex items-center space-x-3 md:space-x-5">
                     <img
-                                    class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
-                                    src="./images/madoudinette logo.png"
-                                    alt="madoudinette_logo"
+                        class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
+                        src="./images/madoudinette logo.png"
+                        alt="madoudinette_logo"
                     />
                     <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm transition-all duration-300">
                         <a href="./index.html">Madoudinette</a>
@@ -76,19 +113,25 @@
                     </svg>
                 </button>
 
-                <div class="hidden md:flex">
+                <div class="hidden md:flex items-center">
+                    <div class="mr-8 flex space-x-2 border-r border-white/30 pr-6">
+                         <button id="lang-fr" class="font-bold text-white hover:text-marron-fonce transition">FR</button>
+                         <span class="text-white">|</span>
+                         <button id="lang-en" class="font-bold text-white hover:text-marron-fonce transition">EN</button>
+                    </div>
+
                     <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
                         <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-                            <a href="./index.html" class="hover:text-jaune-dore transition-colors">Accueil</a>
+                            <a href="./index.html" class="hover:text-jaune-dore" data-i18n="nav_home">Accueil</a>
                         </li>
                         <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-                            <a href="./catalogue.html" class="text-marron-fonce">Catalogue</a>
+                            <a href="./catalogue.html" class="hover:text-jaune-dore" data-i18n="nav_catalogue">Catalogue</a>
                         </li>
                         <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-                            <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+                            <a href="./culture.html" class="text-marron-fonce" data-i18n="nav_culture">Culture & Bienfaits</a>
                         </li>
                         <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-                            <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+                            <a href="./contact.html" class="hover:text-jaune-dore" data-i18n="nav_contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -98,16 +141,16 @@
             <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vert-olive shadow-lg border-t border-white/20">
                 <ul class="flex flex-col items-center py-4 space-y-4 text-white font-bold text-base">
                     <li class="w-full text-center hover:bg-white/10 py-2">
-                        <a href="./index.html" class="hover:text-jaune-dore">Accueil</a>
+                        <a href="./index.html" class="hover:text-jaune-dore" data-i18n="nav_home">Accueil</a>
                     </li>
                     <li class="w-full text-center hover:bg-white/10 py-2">
-                        <a href="./catalogue.html" class="text-marron-fonce">Catalogue</a>
+                        <a href="./catalogue.html" class="hover:text-jaune-dore" data-i18n="nav_catalogue">Catalogue</a>
                     </li>
                     <li class="w-full text-center hover:bg-white/10 py-2">
-                        <a href="./culture.html" class="hover:text-jaune-dore">Culture & Bienfaits</a>
+                        <a href="./culture.html" class="text-marron-fonce" data-i18n="nav_culture">Culture & Bienfaits</a>
                     </li>
                     <li class="w-full text-center hover:bg-white/10 py-2">
-                        <a href="./contact.html" class="hover:text-jaune-dore">Contact</a>
+                        <a href="./contact.html" class="hover:text-jaune-dore" data-i18n="nav_contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -117,15 +160,14 @@
             <section class="max-w-5xl mx-auto p-6">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
                     <div class="md:col-span-2 p-6">
-                        <h2 class="text-2xl md:text-3xl font-display text-marron-fonce mb-2">Qualité, saveurs africaines, bio &amp; halal</h2>
-                        <p class="text-gray-600 mb-4">Madoudinette propose des petits pots biologiques et 100% halal, inspirés des saveurs africaines et du monde. Nos recettes sont pensées pour respecter la santé des tout-petits, les convictions des familles et transmettre la richesse culturelle (mafé, yassa, thieb revisités pour bébé).</p>
-                        <a href="index.html" class="inline-block bg-orange-brul text-white px-4 py-2 rounded-md">En savoir plus sur le projet</a>
+                        <h2 class="text-2xl md:text-3xl font-display text-marron-fonce mb-2" data-i18n="culture_hero_title">Qualité, saveurs africaines, bio &amp; halal</h2>
+                        <p class="text-gray-600 mb-4" data-i18n="culture_hero_desc">Madoudinette propose des petits pots biologiques et 100% halal, inspirés des saveurs africaines et du monde. Nos recettes sont pensées pour respecter la santé des tout-petits, les convictions des familles et transmettre la richesse culturelle (mafé, yassa, thieb revisités pour bébé).</p>
+                        <a href="index.html" class="inline-block bg-orange-brul font-semibold text-white px-4 py-2 rounded-md" data-i18n="btn_more_project">En savoir plus sur le projet</a>
                     </div>
                     <div class="p-4 flex justify-center">
                         <img class="w-full h-48 object-cover rounded-md shadow-lg" src="./images/plat_madoundinette.jpg" width='640' height='480' alt="Illustration produit du projet Madoudinette"/>
                     </div>
                 </div>
-            </section>
 
             <section class="max-w-5xl mx-auto p-6">
                 <div class="flex flex-col space-y-6" id="madou-accordion">
@@ -133,102 +175,132 @@
                     <input type="radio" name="madou-acc" id="acc1" class="sr-only" />
                     <div class="card bg-vert-olive rounded-lg shadow-lg overflow-hidden w-full">
                         <label for="acc1" class="accordion-trigger label-closed w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Recettes inspirées d'Afrique et du monde</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_1_title">Recettes inspirées d'Afrique et du monde</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
                         <label for="acc-none" class="accordion-trigger label-open hidden w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Recettes inspirées d'Afrique et du monde</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_1_title">Recettes inspirées d'Afrique et du monde</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
-                        <div class="panel accordion-panel p-6 text-white border-t border-white/10" hidden>
-                            <p>Nos recettes (mafé, yassa, thieb...) sont revisitées pour les bébés dès 6 mois afin d'éveiller les papilles et préserver les valeurs culturelles tout en respectant les besoins nutritionnels.</p>
+                        <div class="panel accordion-panel p-6 text-white border-t border-white/10">
+                            <p data-i18n="acc_1_text">Nos recettes (mafé, yassa, thieb...) sont revisitées pour les bébés dès 6 mois afin d'éveiller les papilles et préserver les valeurs culturelles tout en respectant les besoins nutritionnels.</p>
                         </div>
                     </div>
 
                     <input type="radio" name="madou-acc" id="acc2" class="sr-only" />
                     <div class="card bg-vert-olive rounded-lg shadow-lg overflow-hidden w-full">
                         <label for="acc2" class="accordion-trigger label-closed w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Bio &amp; naturel</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_2_title">Bio &amp; naturel</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
                         <label for="acc-none" class="accordion-trigger label-open hidden w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Bio &amp; naturel</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_2_title">Bio &amp; naturel</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
-                        <div class="panel accordion-panel p-6 text-white border-t border-white/10" hidden>
-                            <p>Ingrédients frais, de saison et issus de l'agriculture biologique : sans pesticides, sans additifs ni conservateurs. Nous privilégions la qualité pour protéger la santé des tout-petits.</p>
+                        <div class="panel accordion-panel p-6 text-white border-t border-white/10">
+                            <p data-i18n="acc_2_text">Ingrédients frais, de saison et issus de l'agriculture biologique : sans pesticides, sans additifs ni conservateurs. Nous privilégions la qualité pour protéger la santé des tout-petits.</p>
                         </div>
                     </div>
 
                     <input type="radio" name="madou-acc" id="acc3" class="sr-only" />
                     <div class="card bg-vert-olive rounded-lg shadow-lg overflow-hidden w-full">
                         <label for="acc3" class="accordion-trigger label-closed w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Halal &amp; éthique</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_3_title">Halal &amp; éthique</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
                         <label for="acc-none" class="accordion-trigger label-open hidden w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Halal &amp; éthique</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_3_title">Halal &amp; éthique</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
-                        <div class="panel accordion-panel p-6 text-white border-t border-white/10" hidden>
-                            <p>Ingrédients 100&nbsp;% halal, préparés avec rigueur et transparence, dans le respect des convictions religieuses et des bonnes pratiques d'hygiène et de traçabilité.</p>
+                        <div class="panel accordion-panel p-6 text-white border-t border-white/10">
+                            <p data-i18n="acc_3_text">Ingrédients 100&nbsp;% halal, préparés avec rigueur et transparence, dans le respect des convictions religieuses et des bonnes pratiques d'hygiène et de traçabilité.</p>
                         </div>
                     </div>
 
                     <input type="radio" name="madou-acc" id="acc4" class="sr-only" />
                     <div class="card bg-vert-olive rounded-lg shadow-lg overflow-hidden w-full">
                         <label for="acc4" class="accordion-trigger label-closed w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Respect de l'environnement</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_4_title">Respect de l'environnement</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
                         <label for="acc-none" class="accordion-trigger label-open hidden w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Respect de l'environnement</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_4_title">Respect de l'environnement</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
-                        <div class="panel accordion-panel p-6 text-white border-t border-white/10" hidden>
-                            <p>Choix d'ingrédients et de procédés responsables pour réduire l'impact environnemental : emballages mesurés, filières responsables et recettes durables.</p>
+                        <div class="panel accordion-panel p-6 text-white border-t border-white/10">
+                            <p data-i18n="acc_4_text">Choix d'ingrédients et de procédés responsables pour réduire l'impact environnemental : emballages mesurés, filières responsables et recettes durables.</p>
                         </div>
                     </div>
 
                     <input type="radio" name="madou-acc" id="acc5" class="sr-only" />
                     <div class="card bg-vert-olive rounded-lg shadow-lg overflow-hidden w-full">
                         <label for="acc5" class="accordion-trigger label-closed w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Fabrication locale &amp; traçabilité</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_5_title">Fabrication locale &amp; traçabilité</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
                         <label for="acc-none" class="accordion-trigger label-open hidden w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">Fabrication locale &amp; traçabilité</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_5_title">Fabrication locale &amp; traçabilité</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
-                        <div class="panel accordion-panel p-6 text-white border-t border-white/10" hidden>
-                            <p>Nous favorisons les circuits courts, les partenaires locaux et la transparence tout au long de la chaîne pour soutenir l'économie de proximité et garantir la traçabilité des ingrédients.</p>
+                        <div class="panel accordion-panel p-6 text-white border-t border-white/10">
+                            <p data-i18n="acc_5_text">Nous favorisons les circuits courts, les partenaires locaux et la transparence tout au long de la chaîne pour soutenir l'économie de proximité et garantir la traçabilité des ingrédients.</p>
                         </div>
                     </div>
 
                     <input type="radio" name="madou-acc" id="acc6" class="sr-only" />
                     <div class="card bg-vert-olive rounded-lg shadow-lg overflow-hidden w-full">
                         <label for="acc6" class="accordion-trigger label-closed w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">SAV et accompagnement</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_6_title">SAV et accompagnement</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
                         <label for="acc-none" class="accordion-trigger label-open hidden w-full text-left py-6 px-6 flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-white mb-0">SAV et accompagnement</h3>
+                            <h3 class="text-lg font-semibold text-white mb-0" data-i18n="acc_6_title">SAV et accompagnement</h3>
                             <svg class="w-5 h-5 text-white transform transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </label>
-                        <div class="panel accordion-panel p-6 text-white border-t border-white/10" hidden>
-                            <p>Accompagnement client, informations claires sur les ingrédients et procédures simplifiées pour les retours ou questions liées aux produits.</p>
+                        <div class="panel accordion-panel p-6 text-white border-t border-white/10">
+                            <p data-i18n="acc_6_text">Accompagnement client, informations claires sur les ingrédients et procédures simplifiées pour les retours ou questions liées aux produits.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-orange-brul p-6 rounded-lg shadow-md mt-6">
-                    <h3 class="text-xl font-semibold text-white">En résumé</h3>
-                    <p class="text-white">Madoudinette est née d'un besoin réel : proposer des petits pots qui respectent la santé des bébés, les convictions des familles et les traditions culinaires. Nos engagements : des recettes inspirées de l'Afrique et du monde, 100&nbsp;% halal, majoritairement bio et préparées en favorisant les circuits locaux.</p>
+                <div class="max-w-5xl mx-auto p-6 mt-6 reveal delay-1">
+                    <div class="bg-white rounded-lg shadow-md p-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div class="col-span-1 flex justify-center">
+                            <a href="./contact.html" class="founder-link" aria-label="Contacter Fatoumata">
+                                <div class="founder-frame w-64 h-64 md:w-72 md:h-72 mx-auto">
+                                    <img src="./images/fatoumata.png" alt="Fatoumata, fondatrice de Madoudinette" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-span-2 space-y-4">
+                            <div class="p-4 bg-fond-creme rounded-lg border-l-4 border-orange-brul">
+                                <h4 class="text-lg font-semibold text-marron-fonce" data-i18n="culture_founder_title">Derrière Madoudinette : une maman, une mission</h4>
+                                <p class="mt-2 text-gray-800" data-i18n="culture_founder_intro">Je m’appelle Fatoumata, maman de cinq enfants et fondatrice de Madoudinette. L’idée est née lors d’un voyage au Sénégal, quand j’ai constaté qu’il était impossible de trouver des petits pots adaptés à mon bébé : rien de halal, et aucune recette inspirée des saveurs africaines. Ce manque m’a profondément marquée.</p>
+                            </div>
+
+                            <div class="p-4 bg-white rounded-lg shadow-sm border-l-4 border-vert-olive">
+                                <h5 class="font-semibold text-marron-fonce" data-i18n="culture_moment_title">Un déclic familial</h5>
+                                <p class="mt-1 text-gray-800" data-i18n="culture_moment_desc">Heureusement, ma famille a cuisiné pour lui des plats traditionnels adaptés à son âge, qu’il a adoré. Ce fut un déclic : j’ai réalisé à quel point l’offre de petits pots manquait de diversité et de représentation culturelle.</p>
+                            </div>
+
+                            <div class="p-4 bg-white rounded-lg shadow-sm border-l-4 border-jaune-dore">
+                                <h5 class="font-semibold text-marron-fonce" data-i18n="culture_brand_title">Une marque engagée</h5>
+                                <p class="mt-1 text-gray-800" data-i18n="culture_brand_desc">C'est ainsi qu'est née Madoudinette : des petits pots inspirés des recettes du monde, halal, bio et sains, mettant à l’honneur des saveurs comme le mafé, yassa, thieboudienne, revisités pour les bébés dès 6 mois.</p>
+                                <p class="mt-2 text-gray-800" data-i18n="culture_brand_follow">Chaque recette est pensée pour éveiller les papilles des tout-petits, leur transmettre le goût des bonnes choses et de leurs racines, tout en respectant leur santé.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-brul p-6 rounded-lg shadow-md mt-6 reveal delay-2">
+                    <h3 class="text-xl font-semibold text-white" data-i18n="summary_title">En résumé</h3>
+                    <p class="text-white" data-i18n="summary_desc">Madoudinette est née d'un besoin réel : proposer des petits pots qui respectent la santé des bébés, les convictions des familles et les traditions culinaires. Nos engagements : des recettes inspirées de l'Afrique et du monde, 100&nbsp;% halal, majoritairement bio et préparées en favorisant les circuits locaux.</p>
                     <ul class="list-disc list-inside mt-3 text-white">
-                        <li>Saveurs africaines et diversité culinaire</li>
-                        <li>Produits bio, naturels et sans additifs</li>
-                        <li>Ingrédients 100 % halal et traçables</li>
-                        <li>Soutien aux producteurs locaux et circuits courts</li>
+                        <li data-i18n="summary_list_1">Saveurs africaines et diversité culinaire</li>
+                        <li data-i18n="summary_list_2">Produits bio, naturels et sans additifs</li>
+                        <li data-i18n="summary_list_3">Ingrédients 100 % halal et traçables</li>
+                        <li data-i18n="summary_list_4">Soutien aux producteurs locaux et circuits courts</li>
                     </ul>
                 </div>
             </section>
@@ -241,23 +313,23 @@
                 <img src="./images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
                 <h2 class="font-display text-3xl font-bold text-marron-fonce">Madoudinette</h2>
             </div>
-            <p class="text-white/90 leading-relaxed font-medium">
+            <p class="text-white/90 leading-relaxed font-medium" data-i18n="footer_desc">
                 Les premiers petits pots pour bébés inspirés des saveurs africaines, 
                 biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
             </p>
         </div>
         <div>
-            <h3 class="text-xl font-bold text-marron-fonce mb-4">Liens utiles</h3>
+            <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_links_title">Liens utiles</h3>
             <ul class="space-y-2 text-white/90 font-medium">
-                <li><a href="./index.html" class="hover:text-jaune-dore transition">Accueil</a></li>
-                <li><a href="./catalogue.html" class="hover:text-jaune-dore transition">Catalogue</a></li>
-                <li><a href="./culture.html" class="hover:text-jaune-dore transition">Culture & Bienfaits</a></li>
-                <li><a href="./contact.html" class="hover:text-jaune-dore transition">Contact</a></li>
+                <li><a href="./index.html" class="hover:text-jaune-dore transition" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="./catalogue.html" class="hover:text-jaune-dore transition" data-i18n="nav_catalogue">Catalogue</a></li>
+                <li><a href="./culture.html" class="hover:text-jaune-dore transition" data-i18n="nav_culture">Culture & Bienfaits</a></li>
+                <li><a href="./contact.html" class="hover:text-jaune-dore transition" data-i18n="nav_contact">Contact</a></li>
             </ul>
         </div>
 
         <div>
-            <h3 class="text-xl font-bold text-marron-fonce mb-4">Contact</h3>
+            <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_contact_title">Contact</h3>
             <ul class="text-white/90 space-y-2 font-medium">
                 <li>France</li>
                 <li>contact@madoudinette.com </li>
@@ -265,7 +337,7 @@
             </ul>
 
             <div class="flex space-x-4 mt-4">
-                <p class="font-bold text-marron-fonce ">Suivez nous </p><br>
+                <p class="font-bold text-marron-fonce " data-i18n="footer_follow">Suivez nous </p><br>
                 <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition">
                     <img src="./images/instagram.png" alt="insta" class="w-8">
                 </a>
@@ -280,7 +352,7 @@
 
     </div>
 
-    <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white">
+    <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white" data-i18n="footer_copyright">
         © 2025 Madoudinette — Tous droits réservés.
     </div>
 </footer>
