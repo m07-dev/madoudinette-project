@@ -9,7 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/907c90e7e0.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/main.js"></script>
   </head>
 </body>
@@ -33,36 +39,62 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
     <title>Accueil - Madoudinette</title>
   </head>
-
   <body class="flex flex-col min-h-screen bg-fond-creme">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <nav class="flex items-center justify-between bg-vert-olive p-4 shadow-md">
-      <div class="flex items-center space-x-5">
-        <img
-          class="h-14 w-14 rounded-full border-2 border-fond-creme"
-          src="./images/madoudinette logo.png"
-          alt="madoudinette_logo"
-        />
-        <h1 class="font-display text-4xl text-marron-fonce drop-shadow-sm">Madoudinette</h1>
+    <nav class="bg-vert-olive p-4 shadow-md relative z-50">
+      <div class="container mx-auto flex items-center justify-between">
+
+        <div class="flex items-center space-x-3 md:space-x-5">
+          <img
+                  class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
+                  src="./images/madoudinette logo.png"
+                  alt="madoudinette_logo"
+          />
+          <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm transition-all duration-300">
+            <a href="./index.html">Madoudinette</a>
+          </h1>
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <div class="hidden md:flex">
+          <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./index.html" class="text-marron-fonce">Accueil</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
-      
-      <div>
-        <ul class="flex space-x-10 mr-10 text-fond-creme font-bold text-lg">
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vert-olive shadow-lg border-t border-white/20">
+        <ul class="flex flex-col items-center py-4 space-y-4 text-white font-bold text-base">
+          <li class="w-full text-center hover:bg-white/10 py-2">
             <a href="./index.html" class="text-marron-fonce">Accueil</a>
           </li>
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-            <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./catalogue.html" class="hover:text-jaune-dore">Catalogue</a>
           </li>
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-            <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./culture.html" class="hover:text-jaune-dore">Culture & Bienfaits</a>
           </li>
-          <li class="transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-            <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./contact.html" class="hover:text-jaune-dore">Contact</a>
           </li>
         </ul>
       </div>
@@ -134,7 +166,7 @@
 
       <div class="p-6 flex flex-col flex-grow">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-jaune-dore text-marron-fonce mb-3">
-          👶 Dès  6 mois • En stock
+           Dès  6 mois • En stock
         </span>
 
         <strong class="font-display text-2xl text-marron-fonce mb-2">
@@ -146,7 +178,7 @@
         </p>
 
         <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
-          Voir les détails →
+          <a href="./allproducts/mafe-boeuf.html">Voir les détails →</a>
         </button>
       </div>
     </div>
@@ -160,7 +192,7 @@
 
       <div class="p-6 flex flex-col flex-grow">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-200 text-marron-fonce mb-3 bg-jaune-dore">
-        👶 Dès 6 mois • En stock
+         Dès 6 mois • En stock
         </span>
 
         <strong class="font-display text-2xl text-marron-fonce mb-2">
@@ -172,7 +204,7 @@
         </p>
 
         <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
-          Voir les détails →
+          <a href="./allproducts/yassa-poulet.html">Voir les détails →</a>
         </button>
       </div>
     </div>
@@ -186,7 +218,7 @@
 
       <div class="p-6 flex flex-col flex-grow">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-jaune-dore text-marron-fonce mb-3">
-          👶 Dès 6 mois • En stock
+           Dès 6 mois • En stock
         </span>
 
         <strong class="font-display text-2xl text-marron-fonce mb-2">
@@ -198,7 +230,7 @@
         </p>
 
         <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
-          Voir les détails →
+          <a href="./allproducts/thieb-poisson.html">Voir les détails →</a>
         </button>
       </div>
     </div>
@@ -217,7 +249,7 @@
       
       <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
         <div class="mb-6 h-20 flex items-center justify-center">
-          <img src="./images/bio.png" alt="Ingrédients frais" class="max-h-full max-w-full">
+          <i class="fa-solid fa-wheat-awn fa-4x text-marron-fonce"></i>
         </div>
         <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Ingrédients frais</h4>
         <p class="text-gray-700 font-medium text-sm leading-relaxed">
@@ -227,7 +259,7 @@
 
       <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
         <div class="mb-6 h-20 flex items-center justify-center">
-          <img src="./images/halal.png" alt="Palette riche" class="max-h-full max-w-full">
+          <i class="fa-solid fa-swatchbook text-marron-fonce fa-4x"></i>
         </div>
         <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Palette riche</h4>
         <p class="text-gray-700 font-medium text-sm leading-relaxed">
@@ -237,7 +269,7 @@
 
       <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
         <div class="mb-6 h-20 flex items-center justify-center">
-          <img src="./images/afrique.png" alt="Saine et sûre" class="max-h-full max-w-full">
+          <i class="fa-regular fa-heart fa-4x text-marron-fonce"></i>
         </div>
         <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Saine et sûre</h4>
         <p class="text-gray-700 font-medium text-sm leading-relaxed">
@@ -247,7 +279,7 @@
 
       <article class="carousel__card bg-white rounded-2xl shadow-lg border-2 border-vert-olive/20 w-[300px] flex-shrink-0 p-8 flex flex-col items-center text-center mr-8">
         <div class="mb-6 h-20 flex items-center justify-center">
-          <img src="./images/bio.png" alt="Durabilité" class="max-h-full max-w-full">
+          <i class="fa-regular fa-clock fa-4x text-marron-fonce"></i>
         </div>
         <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Durabilité</h4>
         <p class="text-gray-700 font-medium text-sm leading-relaxed">
@@ -316,14 +348,14 @@
         <img src="./images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
         <h2 class="font-display text-3xl font-bold text-marron-fonce">Madoudinette</h2>
       </div>
-      <p class="text-fond-creme/90 leading-relaxed font-medium">
+      <p class="text-white/90 leading-relaxed font-medium">
         Les premiers petits pots pour bébés inspirés des saveurs africaines, 
         biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
       </p>
     </div>
     <div>
       <h3 class="text-xl font-bold text-marron-fonce mb-4">Liens utiles</h3>
-      <ul class="space-y-2 text-fond-creme/90 font-medium">
+      <ul class="space-y-2 text-white/90 font-medium">
         <li><a href="./index.html" class="hover:text-jaune-dore transition">Accueil</a></li>
         <li><a href="./catalogue.html" class="hover:text-jaune-dore transition">Catalogue</a></li>
         <li><a href="./culture.html" class="hover:text-jaune-dore transition">Culture & Bienfaits</a></li>
@@ -333,13 +365,14 @@
 
     <div>
       <h3 class="text-xl font-bold text-marron-fonce mb-4">Contact</h3>
-      <ul class="text-fond-creme/90 space-y-2 font-medium">
-        <li>📍 France</li>
-        <li>📧 contact@madoudinette.com</li>
-        <li>📱 06 00 00 00 00</li>
+      <ul class="text-white/90 space-y-2 font-medium">
+        <li>France</li>
+        <li>contact@madoudinette.com </li>
+        <li>06 17 51 66 01 </li>
       </ul>
 
       <div class="flex space-x-4 mt-4">
+        <p class="font-bold text-marron-fonce ">Suivez nous </p><br>
         <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition">
           <img src="./images/instagram.png" alt="insta" class="w-8">
         </a>
@@ -354,7 +387,7 @@
 
   </div>
 
-  <div class="border-t border-fond-creme/50 mt-10 pt-5 text-center text-sm text-fond-creme/80">
+  <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white">
     © 2025 Madoudinette — Tous droits réservés.
   </div>
 </footer>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Catalogue - Madoudinette</title>
+    <meta name="description" content="Découvrez nos petits pots bébés bio, halal et aux saveurs africaines." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/main.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "vert-olive": "#929f09",
+              "orange-brul": "#e7820a",
+              "jaune-dore": "#fab716",
+              "marron-fonce": "#52300f",
+              "fond-creme": "#ffd79d",
+            },
+            fontFamily: {
+              display: ["AC Soft Icecream Display", "cursive"],
+              sans: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-fond-creme">
+
+    <nav class="bg-vert-olive p-4 shadow-md relative z-50">
+      <div class="container mx-auto flex items-center justify-between">
+        
+        <div class="flex items-center space-x-3 md:space-x-5">
+          <img
+            class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
+            src="./images/madoudinette logo.png"
+            alt="madoudinette_logo"
+          />
+          <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm transition-all duration-300">
+            <a href="./index.html">Madoudinette</a>
+          </h1>
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        
+        <div class="hidden md:flex">
+          <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./index.html" class="hover:text-jaune-dore transition-colors">Accueil</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./catalogue.html" class="text-marron-fonce">Catalogue</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+            </li>
+            <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
+              <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vert-olive shadow-lg border-t border-white/20">
+        <ul class="flex flex-col items-center py-4 space-y-4 text-white font-bold text-base">
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./index.html" class="hover:text-jaune-dore">Accueil</a>
+          </li>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./catalogue.html" class="text-marron-fonce">Catalogue</a>
+          </li>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./culture.html" class="hover:text-jaune-dore">Culture & Bienfaits</a>
+          </li>
+          <li class="w-full text-center hover:bg-white/10 py-2">
+            <a href="./contact.html" class="hover:text-jaune-dore">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-marron-fonce text-4xl md:text-5xl font-bold font-display mb-6">
+          Nos Petits Pots
+        </h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto font-medium">
+          Découvrez notre gamme complète de recettes inspirées d'Afrique et d'ailleurs. 
+          Cuisinés avec amour, certifiés <span class="text-vert-olive font-bold">Bio</span> & <span class="text-vert-olive font-bold">Halal</span>.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="bg-marron-fonce text-white px-6 py-2 rounded-full font-bold shadow-md hover:bg-orange-brul transition">Tout voir</button>
+        <button class="bg-white text-marron-fonce border-2 border-marron-fonce px-6 py-2 rounded-full font-bold hover:bg-marron-fonce hover:text-white transition">Dès 6 mois</button>
+        <button class="bg-white text-marron-fonce border-2 border-marron-fonce px-6 py-2 rounded-full font-bold hover:bg-marron-fonce hover:text-white transition">Dès 8 mois</button>
+        <button class="bg-white text-marron-fonce border-2 border-marron-fonce px-6 py-2 rounded-full font-bold hover:bg-marron-fonce hover:text-white transition">Douceurs Sucrées</button>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <article class="bg-white rounded-2xl shadow-xl border-4 border-white overflow-hidden flex flex-col hover:shadow-2xl transition duration-300">
+          <div class="h-56 overflow-hidden bg-gray-100 relative group">
+            <img src="./images/plat_2.webp" alt="Mafé Bœuf" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            <div class="absolute top-4 right-4 bg-jaune-dore text-marron-fonce text-xs font-bold px-3 py-1 rounded-full">Best-seller</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-display text-2xl text-marron-fonce mb-2">Mafé Bœuf</h3>
+            
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              Un grand classique d’Afrique de l’Ouest revisité. Bœuf tendre, pâte d'arachide douce et petits légumes.
+            </p>
+            
+            <div class="mt-auto pt-4 border-t border-gray-100">
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded mr-2">🐮 Bœuf Halal</span>
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">🥜 Arachide</span>
+            </div>
+            <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
+          <a href="./allproducts/mafe-boeuf.html">Voir les détails →</a>
+        </button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-xl border-4 border-white overflow-hidden flex flex-col hover:shadow-2xl transition duration-300">
+          <div class="h-56 overflow-hidden bg-gray-100 relative group">
+            <img src="./images/plat_3.webp" alt="Yassa Poulet" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-display text-2xl text-marron-fonce mb-2">Yassa Poulet</h3>
+            
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              La célèbre recette sénégalaise aux oignons caramélisés et citron vert, adoucie pour bébé.
+            </p>
+            
+            <div class="mt-auto pt-4 border-t border-gray-100">
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded mr-2">🐔 Poulet Halal</span>
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">🍋 Citronné</span>
+            </div>
+            <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
+          <a href="./allproducts/yassa-poulet.html">Voir les détails →</a>
+        </button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-xl border-4 border-white overflow-hidden flex flex-col hover:shadow-2xl transition duration-300">
+          <div class="h-56 overflow-hidden bg-gray-100 relative group">
+            <img src="./images/plat_madoundinette.jpg" alt="Thieb Poisson" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-display text-2xl text-marron-fonce mb-2">Thieb Poisson</h3>
+            
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              Riz rouge aux légumes et colin d'Alaska. Une explosion de saveurs douces et iodées.
+            </p>
+            
+            <div class="mt-auto pt-4 border-t border-gray-100">
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded mr-2">🐟 Poisson</span>
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">🥕 Légumes</span>
+            </div>
+            <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
+          <a href="./allproducts/thieb-poisson.html">Voir les détails →</a>
+        </button>
+          </div>
+        </article>
+
+        
+      </div>
+    </main>
+
+    <footer class="bg-vert-olive text-fond-creme pt-14 pb-8 mt-20">
+      <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+        <div>
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="./images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
+            <h2 class="font-display text-3xl font-bold text-marron-fonce">Madoudinette</h2>
+          </div>
+          <p class="text-white/90 leading-relaxed font-medium">
+            Les premiers petits pots pour bébés inspirés des saveurs africaines, 
+            biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-marron-fonce mb-4">Liens utiles</h3>
+          <ul class="space-y-2 text-white/90 font-medium">
+            <li><a href="./index.html" class="hover:text-jaune-dore transition">Accueil</a></li>
+            <li><a href="./catalogue.html" class="hover:text-jaune-dore transition">Catalogue</a></li>
+            <li><a href="./culture.html" class="hover:text-jaune-dore transition">Culture & Bienfaits</a></li>
+            <li><a href="./contact.html" class="hover:text-jaune-dore transition">Contact</a></li>
+          </ul>
+        </div>
+    
+        <div>
+          <h3 class="text-xl font-bold text-marron-fonce mb-4">Contact</h3>
+          <ul class="text-white/90 space-y-2 font-medium">
+            <li>France</li>
+            <li>contact@madoudinette.com </li>
+            <li>06 17 51 66 01 </li>
+          </ul>
+    
+          <div class="flex space-x-4 mt-4">
+            <p class="font-bold text-marron-fonce ">Suivez nous </p><br>
+            <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition">
+              <img src="./images/instagram.png" alt="insta" class="w-8">
+            </a>
+            <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" class="hover:scale-110 transition">
+              <img src="./images/facebook.png" alt="fb" class="w-8">
+            </a>
+            <a href="https://www.tiktok.com/@madoudinette" class="hover:scale-110 transition">
+              <img src="./images/tiktok.png" alt="tiktok" class="w-8">
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white">
+        © 2025 Madoudinette — Tous droits réservés.
+      </div>
+    </footer>
+  </body>
+</html>
