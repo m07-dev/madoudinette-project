@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Madoudinette</title>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "vert-olive": "#929f09",
-                        "orange-brul": "#e7820a",
-                        "jaune-dore": "#fab716",
-                        "marron-fonce": "#52300f",
-                        "fond-creme": "#ffd79d",
-                    },
-                    fontFamily: {
-                        display: ["AC Soft Icecream Display", "cursive"],
-                        sans: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
-                    },
-                },
-            },
-        };
-    </script>
-
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/x-icon" href="./image/LogoGirafe.png" />
+    <script src="https://kit.fontawesome.com/907c90e7e0.js" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
-</head>
-
-<body class="flex flex-col min-h-screen bg-fond-creme">
-
-<nav class="bg-vert-olive p-4 shadow-md relative z-50">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "vert-olive": "#929f09",
+              "orange-brul": "#e7820a",
+              "jaune-dore": "#fab716",
+              "marron-fonce": "#52300f",
+              "fond-creme": "#ffd79d",
+            },
+            fontFamily: {
+              display: ["AC Soft Icecream Display", "cursive"],
+              sans: ["Montserrat", "Helvetica", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>Accueil - Madoudinette</title>
+  </head>
+  <body class="flex flex-col min-h-screen bg-fond-creme">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <nav class="bg-vert-olive p-4 shadow-md relative z-50">
       <div class="container mx-auto flex items-center justify-between">
 
         <div class="flex items-center space-x-3 md:space-x-5">
           <img
-                  class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
-                  src="./images/madoudinette logo.png"
-                  alt="madoudinette_logo"
+            class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
+            src="./images/madoudinette logo.png"
+            alt="madoudinette_logo"
           />
           <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm transition-all duration-300">
-            Madoudinette
+            <a href="./index.html" data-i18n="hero_title">Madoudinette</a>
           </h1>
         </div>
 
@@ -57,19 +57,25 @@
           </svg>
         </button>
 
-        <div class="hidden md:flex">
+        <div class="hidden md:flex items-center">
+          <div class="mr-8 flex space-x-2 border-r border-white/30 pr-6">
+             <button id="lang-fr" class="font-bold text-white hover:text-marron-fonce transition">FR</button>
+             <span class="text-white">|</span>
+             <button id="lang-en" class="font-bold text-white hover:text-marron-fonce transition">EN</button>
+          </div>
+
           <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./index.html" class="text-marron-fonce">Accueil</a>
+              <a href="./index.html" class="text-marron-fonce" data-i18n="nav_home">Accueil</a>
             </li>
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
+              <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors" data-i18n="nav_catalogue">Catalogue</a>
             </li>
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+              <a href="./culture.html" class="hover:text-jaune-dore transition-colors" data-i18n="nav_culture">Culture & Bienfaits</a>
             </li>
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+              <a href="./contact.html" class="hover:text-jaune-dore transition-colors" data-i18n="nav_contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -77,72 +83,165 @@
       </div>
 
       <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vert-olive shadow-lg border-t border-white/20">
-        <ul class="flex flex-col items-center py-4 space-y-4 text-white font-bold text-base">
-          <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./index.html" class="text-marron-fonce">Accueil</a>
-          </li>
-          <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./catalogue.html" class="hover:text-jaune-dore">Catalogue</a>
-          </li>
-          <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./culture.html" class="hover:text-jaune-dore">Culture & Bienfaits</a>
-          </li>
-          <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./contact.html" class="hover:text-jaune-dore">Contact</a>
-          </li>
+    <div class="flex flex-col items-center py-4 space-y-4">
+        
+        <div class="flex space-x-4 mb-2">
+            <button id="mobile-lang-fr" class="font-bold text-white border border-white/30 px-3 py-1 rounded hover:bg-white hover:text-marron-fonce transition">FR</button>
+            <button id="mobile-lang-en" class="font-bold text-white border border-white/30 px-3 py-1 rounded hover:bg-white hover:text-marron-fonce transition">EN</button>
+        </div>
+
+        <ul class="flex flex-col items-center space-y-4 text-white font-bold text-base w-full">
+            <li class="w-full text-center hover:bg-white/10 py-2">
+                <a href="./index.html" class="block w-full" data-i18n="nav_home">Accueil</a>
+            </li>
+            <li class="w-full text-center hover:bg-white/10 py-2">
+                <a href="./catalogue.html" class="block w-full" data-i18n="nav_catalogue">Catalogue</a>
+            </li>
+            <li class="w-full text-center hover:bg-white/10 py-2">
+                <a href="./culture.html" class="block w-full" data-i18n="nav_culture">Culture & Bienfaits</a>
+            </li>
+            <li class="w-full text-center hover:bg-white/10 py-2">
+                <a href="./contact.html" class="block w-full" data-i18n="nav_contact">Contact</a>
+            </li>
         </ul>
-      </div>
+    </div>
+</div>
     </nav>
 
+    <main class="flex-grow container mx-auto px-4 py-12">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-marron-fonce text-4xl md:text-5xl font-bold font-display mb-6" data-i18n="contact_header_title">
+          Contactez-nous
+        </h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto font-medium" data-i18n="contact_header_desc">
+          Une question sur nos produits, une suggestion ou juste envie de dire bonjour ? 
+          L'équipe Madoudinette est à votre écoute.
+        </p>
+      </div>
 
-<main>
-    <img src="image/Porteuse.png" class="banner" title="Nous Contacter" alt="Madoudinette">
+      <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border-4 border-white">
+        <div class="grid md:grid-cols-2">
+          
+          <div class="bg-vert-olive p-10 text-white flex flex-col justify-between relative overflow-hidden">
+             <div class="absolute -top-20 -right-20 w-64 h-64 bg-jaune-dore rounded-full opacity-20 pointer-events-none"></div>
+             
+             <div>
+                <h3 class="font-display text-3xl mb-8" data-i18n="contact_info_title">Nos Coordonnées</h3>
+                
+                <div class="space-y-6 text-lg">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-white/20 p-3 rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-jaune-dore">Adresse</p>
+                            <p>France</p>
+                        </div>
+                    </div>
 
-    <div class="contact-item">
-        <img src="./images/instagram.png" width="50" height="50" title="Instagram" alt="Instagram">
-        <a href="https://www.instagram.com/madoudinette/?hl=fr" target="_blank">Instagram: madoudinette</a>
-    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-white/20 p-3 rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-jaune-dore">Email</p>
+                            <a href="mailto:contact@madoudinette.com" class="hover:underline">contact@madoudinette.com</a>
+                        </div>
+                    </div>
 
-    <div class="contact-item">
-        <img src="./images/Youtube.webp" width="50" height="50" title="Youtube" alt="Youtube">
-        <a href="https://www.youtube.com/@madoudinette" target="_blank">Youtube: madoudinette</a>
-    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-white/20 p-3 rounded-full h-12 w-12 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-jaune-dore">Téléphone</p>
+                            <a href="tel:+33617516601" class="hover:underline">06 17 51 66 01</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
 
-    <div class="contact-item">
-        <img src="./images/facebook.png" width="50" height="50" title="Facebook" alt="Facebook">
-        <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" target="_blank">Facebook: Madoudinette Madoudinette</a>
-    </div>
+             <div class="mt-12">
+                <p class="font-bold text-lg mb-4" data-i18n="footer_follow">Suivez nous sur les réseaux</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/madoudinette/?hl=fr" target="_blank" class="bg-white text-marron-fonce h-12 w-12 rounded-full flex items-center justify-center hover:bg-jaune-dore hover:scale-110 transition duration-300 shadow-lg">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/p/Madoudinette-Madoudinette-61576744880389/" target="_blank" class="bg-white text-marron-fonce h-12 w-12 rounded-full flex items-center justify-center hover:bg-jaune-dore hover:scale-110 transition duration-300 shadow-lg">
+                        <i class="fa-brands fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@madoudinette" target="_blank" class="bg-white text-marron-fonce h-12 w-12 rounded-full flex items-center justify-center hover:bg-jaune-dore hover:scale-110 transition duration-300 shadow-lg">
+                        <i class="fa-brands fa-tiktok text-2xl"></i>
+                    </a>
+                </div>
+             </div>
+          </div>
 
-    <div class="contact-item">
-        <img src="./images/Email.jpg" width="50" height="50" title="Email" alt="Email">
-        <a href="mailto:Fatoumata.souane@yahoo.fr">Email: Fatoumata.souane@yahoo.fr</a>
-    </div>
-</main>
+          <div class="p-10 bg-white">
+            <h3 class="font-display text-3xl text-marron-fonce mb-6" data-i18n="contact_form_title">Envoyez-nous un message</h3>
+            
+            <form action="#" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2" for="nom" data-i18n="form_label_name">Votre Nom</label>
+                        <input type="text" id="nom" class="w-full px-4 py-3 rounded-lg bg-gray-50 border-2 border-gray-200 focus:border-vert-olive focus:outline-none focus:ring-1 focus:ring-vert-olive transition" placeholder="Ex: Aminata Diop">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold mb-2" for="email" data-i18n="form_label_email">Votre Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-gray-50 border-2 border-gray-200 focus:border-vert-olive focus:outline-none focus:ring-1 focus:ring-vert-olive transition" placeholder="Ex: contact@email.com">
+                    </div>
+                </div>
 
-<footer class="bg-vert-olive text-fond-creme pt-14 pb-8 mt-20">
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2" for="sujet" data-i18n="form_label_subject">Sujet</label>
+                    <select id="sujet" class="w-full px-4 py-3 rounded-lg bg-gray-50 border-2 border-gray-200 focus:border-vert-olive focus:outline-none focus:ring-1 focus:ring-vert-olive transition">
+                        <option value="info">Demande d'information</option>
+                        <option value="commande">Suivi de commande</option>
+                        <option value="partenariat">Partenariat / Pro</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2" for="message" data-i18n="form_label_message">Votre Message</label>
+                    <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-gray-50 border-2 border-gray-200 focus:border-vert-olive focus:outline-none focus:ring-1 focus:ring-vert-olive transition" placeholder="Bonjour, je souhaiterais savoir..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-marron-fonce text-white font-bold py-4 rounded-lg hover:bg-orange-brul hover:scale-[1.02] transition duration-300 shadow-md text-lg" data-i18n="form_btn_send">
+                    Envoyer mon message
+                </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-vert-olive text-fond-creme pt-14 pb-8 mt-20">
   <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
     <div>
       <div class="flex items-center space-x-4 mb-4">
         <img src="./images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
-        <h2 class="font-display text-3xl font-bold text-marron-fonce">Madoudinette</h2>
+        <h2 class="font-display text-3xl font-bold text-marron-fonce" data-i18n="hero_title">Madoudinette</h2>
       </div>
-      <p class="text-white/90 leading-relaxed font-medium">
+      <p class="text-white/90 leading-relaxed font-medium" data-i18n="footer_desc">
         Les premiers petits pots pour bébés inspirés des saveurs africaines, 
         biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
       </p>
     </div>
     <div>
-      <h3 class="text-xl font-bold text-marron-fonce mb-4">Liens utiles</h3>
+      <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_links_title">Liens utiles</h3>
       <ul class="space-y-2 text-white/90 font-medium">
-        <li><a href="./index.html" class="hover:text-jaune-dore transition">Accueil</a></li>
-        <li><a href="./catalogue.html" class="hover:text-jaune-dore transition">Catalogue</a></li>
-        <li><a href="./culture.html" class="hover:text-jaune-dore transition">Culture & Bienfaits</a></li>
-        <li><a href="./contact.html" class="hover:text-jaune-dore transition">Contact</a></li>
+        <li><a href="./index.html" class="hover:text-jaune-dore transition" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="./catalogue.html" class="hover:text-jaune-dore transition" data-i18n="nav_catalogue">Catalogue</a></li>
+        <li><a href="./culture.html" class="hover:text-jaune-dore transition" data-i18n="nav_culture">Culture & Bienfaits</a></li>
+        <li><a href="./contact.html" class="hover:text-jaune-dore transition" data-i18n="nav_contact">Contact</a></li>
       </ul>
     </div>
 
     <div>
-      <h3 class="text-xl font-bold text-marron-fonce mb-4">Contact</h3>
+      <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_contact_title">Contact</h3>
       <ul class="text-white/90 space-y-2 font-medium">
         <li>France</li>
         <li>contact@madoudinette.com </li>
@@ -150,24 +249,19 @@
       </ul>
 
       <div class="flex space-x-4 mt-4">
-        <p class="font-bold text-marron-fonce ">Suivez nous </p><br>
-        <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition">
-          <img src="./images/instagram.png" alt="insta" class="w-8">
-        </a>
-        <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" class="hover:scale-110 transition">
-          <img src="./images/facebook.png" alt="fb" class="w-8">
-        </a>
-        <a href="https://www.tiktok.com/@madoudinette" class="hover:scale-110 transition">
-          <img src="./images/tiktok.png" alt="tiktok" class="w-8">
-        </a>
-      </div>
+            <p class="font-bold text-marron-fonce" data-i18n="footer_follow">Suivez nous</p><br>
+            <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition"><i class="fa-brands fa-instagram fa-2x text-marron-fonce"></i></a>
+            <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" class="hover:scale-110 transition"><i class="fa-brands fa-facebook fa-2x text-marron-fonce"></i></a>
+            <a href="https://www.tiktok.com/@madoudinette" class="hover:scale-110 transition"><i class="fa-brands fa-tiktok fa-2x text-marron-fonce"></i></a>
+          </div>
     </div>
 
   </div>
 
-  <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white">
+  <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white" data-i18n="footer_copyright">
     © 2025 Madoudinette — Tous droits réservés.
   </div>
 </footer>
-</body>
+
+  </body>
 </html>

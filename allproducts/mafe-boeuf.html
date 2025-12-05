@@ -13,7 +13,6 @@
     <script src="https://kit.fontawesome.com/907c90e7e0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/main.js"></script>
-    </style>
     <script>
       tailwind.config = {
         theme: {
@@ -103,9 +102,9 @@
     <main class="flex-grow container mx-auto px-4 py-12">
         
         <div class="text-sm text-gray-600 mb-8 font-medium">
-            <a href="../index.html" class="hover:underline">Accueil</a> > 
-            <a href="../catalogue.html" class="hover:underline">Catalogue</a> > 
-            <span class="text-marron-fonce font-bold">Mafé Bœuf</span>
+            <a href="../index.html" class="hover:underline" data-i18n="nav_home">Accueil</a> > 
+            <a href="../catalogue.html" class="hover:underline" data-i18n="nav_catalogue">Catalogue</a> > 
+            <span class="text-marron-fonce font-bold" data-i18n="prod_mafe_title">Mafé Bœuf</span>
         </div>
 
         <div class="grid md:grid-cols-2 gap-12 items-start">
@@ -115,60 +114,59 @@
             </div>
 
             <div>
-                <h2 class="font-display text-4xl md:text-5xl text-marron-fonce mb-4">Mafé Bœuf</h2>
+                <h2 class="font-display text-4xl md:text-5xl text-marron-fonce mb-4" data-i18n="prod_mafe_title">Mafé Bœuf</h2>
                 
                 <div class="flex flex-wrap gap-3 mb-6">
-                    <span class="bg-jaune-dore text-marron-fonce px-3 py-1 rounded-full text-sm font-bold">Dès 8 mois</span>
-                    <span class="bg-vert-olive text-white px-3 py-1 rounded-full text-sm font-bold">Bio</span>
-                    <span class="bg-orange-brul text-white px-3 py-1 rounded-full text-sm font-bold">Halal</span>
-                    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-bold">Texture Moulinée</span>
+                    <span class="bg-jaune-dore text-marron-fonce px-3 py-1 rounded-full text-sm font-bold" data-i18n="tag_8m">Dès 8 mois</span>
+                    <span class="bg-vert-olive text-white px-3 py-1 rounded-full text-sm font-bold" data-i18n="tag_bio">Bio</span>
+                    <span class="bg-orange-brul text-white px-3 py-1 rounded-full text-sm font-bold" data-i18n="tag_halal">Halal</span>
+                    <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-bold" data-i18n="tag_mouline">Texture Moulinée</span>
                 </div>
 
-                <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                <p class="text-gray-700 text-lg leading-relaxed mb-8" data-i18n="prod_mafe_desc_long">
                     Faites voyager les papilles de bébé avec ce grand classique d’Afrique de l’Ouest ! 
                     Notre Mafé Bœuf allie la tendresse d'un bœuf halal rigoureusement sélectionné à la douceur 
                     d'une pâte d'arachide onctueuse, le tout mijoté avec des carottes fondantes.
                 </p>
 
                 <div class="bg-white p-6 rounded-xl border-2 border-vert-olive/20 shadow-sm mb-8">
-                    <h3 class="font-display text-2xl text-vert-olive mb-4">Composition</h3>
+                    <h3 class="font-display text-2xl text-vert-olive mb-4" data-i18n="label_composition">Composition</h3>
                     <ul class="space-y-2 text-gray-700 font-medium">
-                        <li> <span class="font-bold">Légumes (55%) :</span> Carottes bio, Pommes de terre bio, Oignons.</li>
-                        <li> <span class="font-bold">Protéines (10%) :</span> Bœuf Halal (origine France).</li>
-                        <li> <span class="font-bold">Sauce :</span> Eau de cuisson, Pâte d'arachide bio (5%), Huile de colza.</li>
+                        <li> <span class="font-bold" data-i18n="label_vegetables">Légumes (55%) :</span> <span data-i18n="mafe_ing_veg">Carottes bio, Pommes de terre bio, Oignons.</span></li>
+                        <li> <span class="font-bold" data-i18n="label_proteins">Protéines (10%) :</span> <span data-i18n="mafe_ing_prot">Bœuf Halal (origine France).</span></li>
+                        <li> <span class="font-bold" data-i18n="label_sauce">Sauce :</span> <span data-i18n="mafe_ing_sauce">Eau de cuisson, Pâte d'arachide bio (5%), Huile de colza.</span></li>
                         <li> <span class="font-bold">Le petit + :</span> Une pointe de persil.</li>
                     </ul>
                     <p class="text-xs text-gray-500 mt-4 italic">Sans sel ajouté • Sans conservateurs • Contient de l'arachide.</p>
                 </div>
                 <div class="bg-orange-brul/10 p-6 rounded-xl border-2 border-orange-brul/20 shadow-sm mt-6">
-    <h3 class="font-display text-2xl text-orange-brul mb-4">Infos utiles</h3>
-    <ul class="space-y-3 text-gray-700 font-medium">
-        <li class="flex items-start">
-            <span class="mr-2"></span>
-            <span><span class="font-bold">Âge conseillé :</span> Dès 8 mois</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2"></span>
-            <span><span class="font-bold">Portion :</span> 200 g</span>
-        </li>
-         <li class="flex items-start">
-            <span class="mr-2"></span>
-            <span><span class="font-bold">Allergènes :</span> Arachides (Cacahuètes)</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2"></span>
-            <span><span class="font-bold">Conservation :</span> À conserver à température ambiante. À consommer dans les 24 heures après ouverture.</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2"></span>
-            <span><span class="font-bold">Mode de préparation :</span> Réchauffer au bain-marie ou au micro-ondes (sans couvercle).</span>
-        </li>
-    </ul>
-</div>
-<br>
+                    <h3 class="font-display text-2xl text-orange-brul mb-4" data-i18n="label_info_useful">Infos utiles</h3>
+                    <ul class="space-y-3 text-gray-700 font-medium">
+                        <li class="flex items-start">
+                            <span class="mr-2"></span>
+                            <span><span class="font-bold" data-i18n="label_age">Âge conseillé :</span> <span data-i18n="tag_8m">Dès 8 mois</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2"></span>
+                            <span><span class="font-bold" data-i18n="label_portion">Portion :</span> 200 g</span>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="mr-2"></span>
+                            <span><span class="font-bold" data-i18n="label_allergens">Allergènes :</span> <span data-i18n="allergen_peanut">Arachides (Cacahuètes)</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2"></span>
+                            <span><span class="font-bold" data-i18n="label_conservation">Conservation :</span> <span data-i18n="text_conservation">À conserver à température ambiante. À consommer dans les 24 heures après ouverture.</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-2"></span>
+                            <span><span class="font-bold" data-i18n="label_prep">Mode de préparation :</span> <span data-i18n="text_prep">Réchauffer au bain-marie ou au micro-ondes (sans couvercle).</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <br>
                 
-
-                <a href="../catalogue.html" class="inline-block w-full md:w-auto text-center bg-marron-fonce text-white font-bold py-3 px-8 rounded-full hover:bg-orange-brul hover:scale-105 transition duration-300 shadow-lg">
+                <a href="../catalogue.html" class="inline-block w-full md:w-auto text-center bg-marron-fonce text-white font-bold py-3 px-8 rounded-full hover:bg-orange-brul hover:scale-105 transition duration-300 shadow-lg" data-i18n="btn_back_catalogue">
                     ← Retour au catalogue
                 </a>
             </div>
@@ -177,48 +175,48 @@
     </main>
 
     <footer class="bg-vert-olive text-fond-creme pt-14 pb-8 mt-20">
-  <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
-    <div>
-      <div class="flex items-center space-x-4 mb-4">
-        <img src="../images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
-        <h2 class="font-display text-3xl font-bold text-marron-fonce" data-i18n="hero_title">Madoudinette</h2>
-      </div>
-      <p class="text-white/90 leading-relaxed font-medium" data-i18n="footer_desc">
-        Les premiers petits pots pour bébés inspirés des saveurs africaines, 
-        biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
-      </p>
-    </div>
-    <div>
-      <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_links_title">Liens utiles</h3>
-      <ul class="space-y-2 text-white/90 font-medium">
-        <li><a href="../index.html" class="hover:text-jaune-dore transition" data-i18n="nav_home">Accueil</a></li>
-        <li><a href="../catalogue.html" class="hover:text-jaune-dore transition" data-i18n="nav_catalogue">Catalogue</a></li>
-        <li><a href="../culture.html" class="hover:text-jaune-dore transition" data-i18n="nav_culture">Culture & Bienfaits</a></li>
-        <li><a href="../contact.html" class="hover:text-jaune-dore transition" data-i18n="nav_contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_contact_title">Contact</h3>
-      <ul class="text-white/90 space-y-2 font-medium">
-        <li>France</li>
-        <li>contact@madoudinette.com </li>
-        <li>06 17 51 66 01 </li>
-      </ul>
-
-      <div class="flex space-x-4 mt-4">
-            <p class="font-bold text-marron-fonce" data-i18n="footer_follow">Suivez nous</p><br>
-            <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition"><i class="fa-brands fa-instagram fa-2x text-marron-fonce"></i></a>
-            <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" class="hover:scale-110 transition"><i class="fa-brands fa-facebook fa-2x text-marron-fonce"></i></a>
-            <a href="https://www.tiktok.com/@madoudinette" class="hover:scale-110 transition"><i class="fa-brands fa-tiktok fa-2x text-marron-fonce"></i></a>
+      <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+        <div>
+          <div class="flex items-center space-x-4 mb-4">
+            <img src="../images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
+            <h2 class="font-display text-3xl font-bold text-marron-fonce" data-i18n="hero_title">Madoudinette</h2>
           </div>
-    </div>
+          <p class="text-white/90 leading-relaxed font-medium" data-i18n="footer_desc">
+            Les premiers petits pots pour bébés inspirés des saveurs africaines, 
+            biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_links_title">Liens utiles</h3>
+          <ul class="space-y-2 text-white/90 font-medium">
+            <li><a href="../index.html" class="hover:text-jaune-dore transition" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="../catalogue.html" class="hover:text-jaune-dore transition" data-i18n="nav_catalogue">Catalogue</a></li>
+            <li><a href="../culture.html" class="hover:text-jaune-dore transition" data-i18n="nav_culture">Culture & Bienfaits</a></li>
+            <li><a href="../contact.html" class="hover:text-jaune-dore transition" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
 
-  </div>
+        <div>
+          <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_contact_title">Contact</h3>
+          <ul class="text-white/90 space-y-2 font-medium">
+            <li>France</li>
+            <li>contact@madoudinette.com </li>
+            <li>06 17 51 66 01 </li>
+          </ul>
 
-  <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white" data-i18n="footer_copyright">
-    © 2025 Madoudinette — Tous droits réservés.
-  </div>
-</footer>
+          <div class="flex space-x-4 mt-4">
+                <p class="font-bold text-marron-fonce" data-i18n="footer_follow">Suivez nous</p><br>
+                <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition"><i class="fa-brands fa-instagram fa-2x text-marron-fonce"></i></a>
+                <a href="https://www.facebook.com/people/Madoudinette-Madoudinette/" class="hover:scale-110 transition"><i class="fa-brands fa-facebook fa-2x text-marron-fonce"></i></a>
+                <a href="https://www.tiktok.com/@madoudinette" class="hover:scale-110 transition"><i class="fa-brands fa-tiktok fa-2x text-marron-fonce"></i></a>
+              </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white" data-i18n="footer_copyright">
+        © 2025 Madoudinette — Tous droits réservés.
+      </div>
+    </footer>
   </body>
 </html>

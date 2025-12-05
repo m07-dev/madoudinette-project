@@ -50,9 +50,7 @@
             src="../images/madoudinette logo.png"
             alt="logo"
           />
-          <h1
-            class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm"
-          >
+          <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm">
             <a href="../index.html" data-i18n="hero_title">Madoudinette</a>
           </h1>
         </div>
@@ -186,9 +184,9 @@
 
     <main class="flex-grow container mx-auto px-4 py-12">
       <div class="text-sm text-gray-600 mb-8 font-medium">
-        <a href="../index.html" class="hover:underline">Accueil</a> >
-        <a href="../catalogue.html" class="hover:underline">Catalogue</a> >
-        <span class="text-marron-fonce font-bold">Thieb Poisson</span>
+        <a href="../index.html" class="hover:underline" data-i18n="nav_home">Accueil</a> >
+        <a href="../catalogue.html" class="hover:underline" data-i18n="nav_catalogue">Catalogue</a> >
+        <span class="text-marron-fonce font-bold" data-i18n="prod_thieb_title">Thieb Poisson</span>
       </div>
 
       <div class="grid md:grid-cols-2 gap-12 items-start">
@@ -203,20 +201,20 @@
         </div>
 
         <div>
-          <h2 class="font-display text-4xl md:text-5xl text-marron-fonce mb-4">
+          <h2 class="font-display text-4xl md:text-5xl text-marron-fonce mb-4" data-i18n="prod_thieb_title">
             Thieb Poisson
           </h2>
           <div class="flex flex-wrap gap-3 mb-6">
             <span
               class="bg-jaune-dore text-marron-fonce px-3 py-1 rounded-full text-sm font-bold"
-              >Dès 6 mois</span
+              data-i18n="tag_6m">Dès 6 mois</span
             >
             <span
               class="bg-vert-olive text-white px-3 py-1 rounded-full text-sm font-bold"
-              >Bio</span
+              data-i18n="tag_bio">Bio</span
             >
           </div>
-          <p class="text-gray-700 text-lg leading-relaxed mb-8">
+          <p class="text-gray-700 text-lg leading-relaxed mb-8" data-i18n="prod_thieb_desc_long">
             Inspiré du plat national sénégalais (Thiéboudienne), ce petit pot
             offre à bébé toutes les saveurs de la mer et du potager. Du poisson
             blanc sauvage (Colin) mélangé à du riz rouge mijoté dans une sauce
@@ -225,60 +223,56 @@
           <div
             class="bg-white p-6 rounded-xl border-2 border-vert-olive/20 shadow-sm mb-8"
           >
-            <h3 class="font-display text-2xl text-vert-olive mb-4">
+            <h3 class="font-display text-2xl text-vert-olive mb-4" data-i18n="label_composition">
               Composition
             </h3>
             <ul class="space-y-2 text-gray-700 font-medium">
               <li>
-                <span class="font-bold">Légumes :</span> Carottes, Aubergines,
-                Chou, Tomate.
+                <span class="font-bold" data-i18n="label_vegetables">Légumes :</span> <span data-i18n="thieb_ing_veg">Carottes, Aubergines, Chou, Tomate.</span>
               </li>
               <li>
-                <span class="font-bold">Protéines :</span> Colin d'Alaska (Pêche
-                durable MSC).
+                <span class="font-bold" data-i18n="label_proteins">Protéines :</span> <span data-i18n="thieb_ing_prot">Colin d'Alaska (Pêche durable MSC).</span>
               </li>
               <li>
-                <span class="font-bold">Féculents :</span> Riz de Camargue.
+                <span class="font-bold" data-i18n="label_starch">Féculents :</span> <span data-i18n="thieb_ing_starch">Riz de Camargue.</span>
               </li>
             </ul>
           </div>
           <div
             class="bg-orange-brul/10 p-6 rounded-xl border-2 border-orange-brul/20 shadow-sm mt-6"
           >
-            <h3 class="font-display text-2xl text-orange-brul mb-4">
+            <h3 class="font-display text-2xl text-orange-brul mb-4" data-i18n="label_info_useful">
               Infos utiles
             </h3>
             <ul class="space-y-3 text-gray-700 font-medium">
               <li class="flex items-start">
                 <span class="mr-2"></span>
-                <span
-                  ><span class="font-bold">Âge conseillé :</span> Dès 6
-                  mois</span
-                >
+                <span>
+                    <span class="font-bold" data-i18n="label_age">Âge conseillé :</span> <span data-i18n="tag_6m">Dès 6 mois</span>
+                </span>
               </li>
               <li class="flex items-start">
                 <span class="mr-2"></span>
-                <span><span class="font-bold">Portion :</span> 200 g</span>
+                <span><span class="font-bold" data-i18n="label_portion">Portion :</span> 200 g</span>
               </li>
               <li class="flex items-start">
                 <span class="mr-2"></span>
-                <span><span class="font-bold">Allergènes :</span> Poisson</span>
+                <span>
+                    <span class="font-bold" data-i18n="label_allergens">Allergènes :</span> <span data-i18n="allergen_fish">Poisson</span>
+                </span>
               </li>
               <li class="flex items-start">
                 <span class="mr-2"></span>
-                <span
-                  ><span class="font-bold">Conservation :</span> À conserver à
-                  température ambiante. À consommer dans les 24 heures après
-                  ouverture.</span
-                >
+                <span>
+                    <span class="font-bold" data-i18n="label_conservation">Conservation :</span> <span data-i18n="text_conservation">À conserver à température ambiante. À consommer dans les 24 heures après ouverture.</span>
+                </span>
               </li>
               <li class="flex items-start">
                 <span class="mr-2"></span>
-                <span
-                  ><span class="font-bold">Mode de préparation :</span>
-                  Réchauffer au bain-marie ou au micro-ondes (sans
-                  couvercle).</span
-                >
+                <span>
+                    <span class="font-bold" data-i18n="label_prep">Mode de préparation :</span>
+                    <span data-i18n="text_prep">Réchauffer au bain-marie ou au micro-ondes (sans couvercle).</span>
+                </span>
               </li>
             </ul>
           </div>
@@ -286,6 +280,7 @@
           <a
             href="../catalogue.html"
             class="inline-block w-full md:w-auto text-center bg-marron-fonce text-white font-bold py-3 px-8 rounded-full hover:bg-orange-brul hover:scale-105 transition duration-300 shadow-lg"
+            data-i18n="btn_back_catalogue"
           >
             ← Retour au catalogue
           </a>
@@ -328,7 +323,7 @@
           <ul class="space-y-2 text-white/90 font-medium">
             <li>
               <a
-                href="./index.html"
+                href="../index.html"
                 class="hover:text-jaune-dore transition"
                 data-i18n="nav_home"
                 >Accueil</a
@@ -336,7 +331,7 @@
             </li>
             <li>
               <a
-                href="./catalogue.html"
+                href="../catalogue.html"
                 class="hover:text-jaune-dore transition"
                 data-i18n="nav_catalogue"
                 >Catalogue</a
@@ -344,7 +339,7 @@
             </li>
             <li>
               <a
-                href="./culture.html"
+                href="../culture.html"
                 class="hover:text-jaune-dore transition"
                 data-i18n="nav_culture"
                 >Culture & Bienfaits</a
@@ -352,7 +347,7 @@
             </li>
             <li>
               <a
-                href="./contact.html"
+                href="../contact.html"
                 class="hover:text-jaune-dore transition"
                 data-i18n="nav_contact"
                 >Contact</a
