@@ -7,19 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" type="image/x-icon" href="./images/madoudinette logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://kit.fontawesome.com/907c90e7e0.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/907c90e7e0.js" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
-  </head>
-</body>
-</html>
     <script>
       tailwind.config = {
         theme: {
@@ -43,17 +36,18 @@
   </head>
   <body class="flex flex-col min-h-screen bg-fond-creme">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <nav class="bg-vert-olive p-4 shadow-md relative z-50">
       <div class="container mx-auto flex items-center justify-between">
 
         <div class="flex items-center space-x-3 md:space-x-5">
           <img
-                  class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
-                  src="./images/madoudinette logo.png"
-                  alt="madoudinette_logo"
+            class="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-fond-creme transition-all duration-300"
+            src="./images/madoudinette logo.png"
+            alt="madoudinette_logo"
           />
           <h1 class="font-display text-xl md:text-4xl text-marron-fonce drop-shadow-sm transition-all duration-300">
-            <a href="./index.html">Madoudinette</a>
+            <a href="./index.html" data-i18n="hero_title">Madoudinette</a>
           </h1>
         </div>
 
@@ -63,19 +57,25 @@
           </svg>
         </button>
 
-        <div class="hidden md:flex">
+        <div class="hidden md:flex items-center">
+          <div class="mr-8 flex space-x-2 border-r border-white/30 pr-6">
+             <button id="lang-fr" class="font-bold text-white hover:text-marron-fonce transition">FR</button>
+             <span class="text-white">|</span>
+             <button id="lang-en" class="font-bold text-white hover:text-marron-fonce transition">EN</button>
+          </div>
+
           <ul class="flex space-x-10 mr-10 text-white font-bold text-lg">
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./index.html" class="text-marron-fonce">Accueil</a>
+              <a href="./index.html" class="text-marron-fonce" data-i18n="nav_home">Accueil</a>
             </li>
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors">Catalogue</a>
+              <a href="./catalogue.html" class="hover:text-jaune-dore transition-colors" data-i18n="nav_catalogue">Catalogue</a>
             </li>
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./culture.html" class="hover:text-jaune-dore transition-colors">Culture & Bienfaits</a>
+              <a href="./culture.html" class="hover:text-jaune-dore transition-colors" data-i18n="nav_culture">Culture & Bienfaits</a>
             </li>
             <li class="transition duration-300 hover:-translate-y-1 hover:scale-110">
-              <a href="./contact.html" class="hover:text-jaune-dore transition-colors">Contact</a>
+              <a href="./contact.html" class="hover:text-jaune-dore transition-colors" data-i18n="nav_contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -85,16 +85,16 @@
       <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vert-olive shadow-lg border-t border-white/20">
         <ul class="flex flex-col items-center py-4 space-y-4 text-white font-bold text-base">
           <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./index.html" class="text-marron-fonce">Accueil</a>
+            <a href="./index.html" class="text-marron-fonce" data-i18n="nav_home">Accueil</a>
           </li>
           <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./catalogue.html" class="hover:text-jaune-dore">Catalogue</a>
+            <a href="./catalogue.html" class="hover:text-jaune-dore" data-i18n="nav_catalogue">Catalogue</a>
           </li>
           <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./culture.html" class="hover:text-jaune-dore">Culture & Bienfaits</a>
+            <a href="./culture.html" class="hover:text-jaune-dore" data-i18n="nav_culture">Culture & Bienfaits</a>
           </li>
           <li class="w-full text-center hover:bg-white/10 py-2">
-            <a href="./contact.html" class="hover:text-jaune-dore">Contact</a>
+            <a href="./contact.html" class="hover:text-jaune-dore" data-i18n="nav_contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -102,24 +102,23 @@
 
     <div class="relative w-full h-[500px]">
       <img
-        src="./images/photo_3.jpg"
         src="./images/plat_1.webp"
         alt="Petits pots africains"
-      class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover"
       />
 
       <div class="absolute inset-0 bg-black/40"></div>
       
       <div class="absolute inset-0 flex items-center justify-center px-4">
         <div class="text-center max-w-4xl">
-          <h2 class="text-5xl md:text-6xl font-display font-bold text-jaune-dore drop-shadow-lg mb-4">
+          <h2 class="text-5xl md:text-6xl font-display font-bold text-jaune-dore drop-shadow-lg mb-4" data-i18n="hero_title">
             Madoudinette
           </h2>
-          <p class="font-sans font-bold text-xl md:text-2xl text-white drop-shadow-md leading-relaxed">
+          <p class="font-sans font-bold text-xl md:text-2xl text-white drop-shadow-md leading-relaxed" data-i18n="hero_desc">
             Les 1ers petits pots pour bébés inspirés des saveurs africaines,
             halal et biologiques.
           </p>
-          <a href="./catalogue.html" class="inline-block mt-8 bg-orange-brul text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-jaune-dore transition duration-300">
+          <a href="./catalogue.html" class="inline-block mt-8 bg-orange-brul text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-jaune-dore transition duration-300" data-i18n="btn_discover">
             Découvrir nos produits
           </a>
         </div>
@@ -129,7 +128,7 @@
     <main class="container mx-auto px-4 py-12 bg-fond-creme">
       
       <div class="max-w-4xl mx-auto mb-16">
-        <h3 class="text-marron-fonce text-5xl text-center mb-8 font-bold font-display pt-10 pb-10">
+        <h3 class="text-marron-fonce text-5xl text-center mb-8 font-bold font-display pt-10 pb-10" data-i18n="intro_title">
           Présentation
         </h3>
         <div class="aspect-video rounded-xl overflow-hidden shadow-xl">
@@ -143,21 +142,21 @@
           ></iframe>
         </div>
         <div class="mt-8 text-center max-w-2xl mx-auto">
-          <p class="text-lg text-gray-700 leading-relaxed font-medium pb-14 pt-10 ">
+            <p class="text-lg text-gray-700 leading-relaxed font-medium pb-14 pt-10" data-i18n="intro_text">
             Madoudinette : marque fondée par une maman de cinq enfants, proposant
             des petits pots <span class="text-vert-olive font-bold">bio</span>, <span class="text-vert-olive font-bold">halal</span> et inspirés des <span class="text-orange-brul font-bold">saveurs africaines</span>, pour
             répondre au manque de diversité dans l’alimentation infantile.
           </p>
         </div>
       </div>
+
     <section class="bg-fond-creme py-24">
-  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display" data-i18n="home_products_title">
     Nos Produits
   </h3>
 
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
 
-    <!-- Carte 1 -->
     <div class="bg-white rounded-2xl shadow-xl border-4 border-fond-creme overflow-hidden flex flex-col">
       <div class="h-48 overflow-hidden bg-gray-100">
         <img src="./images/plat_2.webp" alt="Douceur Patate Douce" 
@@ -166,24 +165,23 @@
 
       <div class="p-6 flex flex-col flex-grow">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-jaune-dore text-marron-fonce mb-3">
-           Dès  6 mois • En stock
+           <span data-i18n="tag_8m">Dès 8 mois</span> • En stock
         </span>
 
-        <strong class="font-display text-2xl text-marron-fonce mb-2">
+        <strong class="font-display text-2xl text-marron-fonce mb-2" data-i18n="prod_mafe_title">
           Mafé Bœuf
         </strong>
 
-        <p class="text-gray-600 text-sm leading-relaxed">
+        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="prod_mafe_desc_short">
           Un grand classique d’Afrique de l’Ouest revisité pour les tout-petits. Ce plat allie goût, douceur et équilibre nutritionnel pour éveiller le palais de bébé en toute sécurité.
         </p>
 
         <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
-          <a href="./allproducts/mafe-boeuf.html">Voir les détails →</a>
+          <a href="./allproducts/mafe-boeuf.html" data-i18n="btn_details">Voir les détails →</a>
         </button>
       </div>
     </div>
 
-    <!-- Carte 2 -->
     <div class="bg-white rounded-2xl shadow-xl border-4 border-fond-creme overflow-hidden flex flex-col">
       <div class="h-48 bg-fond-creme/50 flex items-center justify-center text-marron-fonce">
         <img src="./images/plat_3.webp" alt="Douceur Patate Douce" 
@@ -192,24 +190,23 @@
 
       <div class="p-6 flex flex-col flex-grow">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-200 text-marron-fonce mb-3 bg-jaune-dore">
-         Dès 6 mois • En stock
+         <span data-i18n="tag_6m">Dès 6 mois</span> • En stock
         </span>
 
-        <strong class="font-display text-2xl text-marron-fonce mb-2">
+        <strong class="font-display text-2xl text-marron-fonce mb-2" data-i18n="prod_yassa_title">
           Yassa Poulet
         </strong>
 
-        <p class="text-gray-600 text-sm leading-relaxed">
+        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="prod_yassa_desc_short">
           Une recette saine et gourmande du célèbre Yassa sénégalais, adaptée aux bébés dès 6 mois, alliant tradition culinaire et apports essentiels pour grandir en douceur.
         </p>
 
         <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
-          <a href="./allproducts/yassa-poulet.html">Voir les détails →</a>
+          <a href="./allproducts/yassa-poulet.html" data-i18n="btn_details">Voir les détails →</a>
         </button>
       </div>
     </div>
 
-    <!-- Carte 3 -->
     <div class="bg-white rounded-2xl shadow-xl border-4 border-fond-creme overflow-hidden flex flex-col">
       <div class="h-48 bg-fond-creme/50 flex items-center justify-center text-marron-fonce">
         <img src="./images/plat_madoundinette.jpg" alt="Douceur Patate Douce" 
@@ -218,19 +215,19 @@
 
       <div class="p-6 flex flex-col flex-grow">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-jaune-dore text-marron-fonce mb-3">
-           Dès 6 mois • En stock
+           <span data-i18n="tag_6m">Dès 6 mois</span> • En stock
         </span>
 
-        <strong class="font-display text-2xl text-marron-fonce mb-2">
+        <strong class="font-display text-2xl text-marron-fonce mb-2" data-i18n="prod_thieb_title">
           Thieb poisson
         </strong>
 
-        <p class="text-gray-600 text-sm leading-relaxed">
+        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="prod_thieb_desc_short">
           Un plat inspiré du traditionnel Tcheboudienne Sénégalais, revisité pour bébé dès 6 mois. Savoureux et équilibré, il répond aux besoins nutritionnels des tout-petits.
         </p>
 
         <button class="mt-auto pt-4 text-orange-brul font-bold text-sm hover:underline self-start">
-          <a href="./allproducts/thieb-poisson.html">Voir les détails →</a>
+          <a href="./allproducts/thieb-poisson.html" data-i18n="btn_details">Voir les détails →</a>
         </button>
       </div>
     </div>
@@ -240,7 +237,7 @@
 
 
 <section class="bg-fond-creme py-24 overflow-hidden">
-  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display" data-i18n="home_values_title">
     Nos Valeurs
   </h3>
 
@@ -251,8 +248,8 @@
         <div class="mb-6 h-20 flex items-center justify-center">
           <i class="fa-solid fa-wheat-awn fa-4x text-marron-fonce"></i>
         </div>
-        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Ingrédients frais</h4>
-        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display" data-i18n="val_fresh_title">Ingrédients frais</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed" data-i18n="val_fresh_desc">
           Légumes bio, céréales africaines et viandes halal. Sans additifs, juste l'essentiel pour bien grandir.
         </p>
       </article>
@@ -261,8 +258,8 @@
         <div class="mb-6 h-20 flex items-center justify-center">
           <i class="fa-solid fa-swatchbook text-marron-fonce fa-4x"></i>
         </div>
-        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Palette riche</h4>
-        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display" data-i18n="val_rich_title">Palette riche</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed" data-i18n="val_rich_desc">
           Des recettes aux saveurs du monde pour éveiller la curiosité et transmettre un patrimoine riche.
         </p>
       </article>
@@ -271,8 +268,8 @@
         <div class="mb-6 h-20 flex items-center justify-center">
           <i class="fa-regular fa-heart fa-4x text-marron-fonce"></i>
         </div>
-        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Saine et sûre</h4>
-        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display" data-i18n="val_safe_title">Saine et sûre</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed" data-i18n="val_safe_desc">
           Validées par des nutritionnistes, nos recettes 100% naturelles aux super-aliments sont sûres pour bébé.
         </p>
       </article>
@@ -281,8 +278,8 @@
         <div class="mb-6 h-20 flex items-center justify-center">
           <i class="fa-regular fa-clock fa-4x text-marron-fonce"></i>
         </div>
-        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display">Durabilité</h4>
-        <p class="text-gray-700 font-medium text-sm leading-relaxed">
+        <h4 class="text-xl font-bold text-vert-olive mb-3 font-display" data-i18n="val_sustain_title">Durabilité</h4>
+        <p class="text-gray-700 font-medium text-sm leading-relaxed" data-i18n="val_sustain_desc">
           Ingrédients bio et équitables, soutien aux producteurs africains et emballages écoresponsables.
         </p>
       </article>
@@ -291,15 +288,14 @@
   </div>
 </section>
 <section class="py-24 bg-neutral-50">
-  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display">
+  <h3 class="text-marron-fonce text-4xl text-center mb-12 font-bold font-display" data-i18n="testimonials_title">
     Ce que nos clients pensent de nous
   </h3>
 
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
 
-    <!-- Témoignage 1 -->
     <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
-      <p class="text-gray-700 text-lg italic mb-6">
+      <p class="text-gray-700 text-lg italic mb-6" data-i18n="review_1">
         “Je suis vraiment ravie d’avoir découvert Madidounette. Mon bébé adore leurs recettes, et moi je suis bluffée par la diversité des saveurs proposées. On est loin des goûts classiques qu’on retrouve partout !.”
       </p>
       <div class="mt-auto flex items-center gap-4">
@@ -311,9 +307,8 @@
       </div>
     </div>
 
-    <!-- Témoignage 2 -->
     <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
-      <p class="text-gray-700 text-lg italic mb-6">
+      <p class="text-gray-700 text-lg italic mb-6" data-i18n="review_2">
         “Les repas sont équilibrés, savoureux, et surtout adaptés aux besoins des tout-petits. En tant que parent, c’est rassurant de savoir que tout est fait dans le respect des normes. Un vrai gain de sérénité.”
       </p>
       <div class="mt-auto flex items-center gap-4">
@@ -325,9 +320,8 @@
       </div>
     </div>
 
-    <!-- Témoignage 3 -->
     <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col">
-      <p class="text-gray-700 text-lg italic mb-6">
+      <p class="text-gray-700 text-lg italic mb-6" data-i18n="review_3">
         “Un concept utile, fiable, et vraiment pratique pour les repas de bébé. On apprécie l’aspect sain, halal et la transparence sur la composition. Idéal pour les familles soucieuses de bien faire.”
       </p>
       <div class="mt-auto flex items-center gap-4">
@@ -346,25 +340,25 @@
     <div>
       <div class="flex items-center space-x-4 mb-4">
         <img src="./images/madoudinette logo.png" alt="logo" class="h-14 w-14 rounded-full border-2 border-fond-creme">
-        <h2 class="font-display text-3xl font-bold text-marron-fonce">Madoudinette</h2>
+        <h2 class="font-display text-3xl font-bold text-marron-fonce" data-i18n="hero_title">Madoudinette</h2>
       </div>
-      <p class="text-white/90 leading-relaxed font-medium">
+      <p class="text-white/90 leading-relaxed font-medium" data-i18n="footer_desc">
         Les premiers petits pots pour bébés inspirés des saveurs africaines, 
         biologiques et halal. Pour une alimentation saine, riche et pleine de culture.
       </p>
     </div>
     <div>
-      <h3 class="text-xl font-bold text-marron-fonce mb-4">Liens utiles</h3>
+      <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_links_title">Liens utiles</h3>
       <ul class="space-y-2 text-white/90 font-medium">
-        <li><a href="./index.html" class="hover:text-jaune-dore transition">Accueil</a></li>
-        <li><a href="./catalogue.html" class="hover:text-jaune-dore transition">Catalogue</a></li>
-        <li><a href="./culture.html" class="hover:text-jaune-dore transition">Culture & Bienfaits</a></li>
-        <li><a href="./contact.html" class="hover:text-jaune-dore transition">Contact</a></li>
+        <li><a href="./index.html" class="hover:text-jaune-dore transition" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="./catalogue.html" class="hover:text-jaune-dore transition" data-i18n="nav_catalogue">Catalogue</a></li>
+        <li><a href="./culture.html" class="hover:text-jaune-dore transition" data-i18n="nav_culture">Culture & Bienfaits</a></li>
+        <li><a href="./contact.html" class="hover:text-jaune-dore transition" data-i18n="nav_contact">Contact</a></li>
       </ul>
     </div>
 
     <div>
-      <h3 class="text-xl font-bold text-marron-fonce mb-4">Contact</h3>
+      <h3 class="text-xl font-bold text-marron-fonce mb-4" data-i18n="footer_contact_title">Contact</h3>
       <ul class="text-white/90 space-y-2 font-medium">
         <li>France</li>
         <li>contact@madoudinette.com </li>
@@ -372,7 +366,7 @@
       </ul>
 
       <div class="flex space-x-4 mt-4">
-        <p class="font-bold text-marron-fonce ">Suivez nous </p><br>
+        <p class="font-bold text-marron-fonce" data-i18n="footer_follow">Suivez nous </p><br>
         <a href="https://www.instagram.com/madoudinette/?hl=fr" class="hover:scale-110 transition">
           <img src="./images/instagram.png" alt="insta" class="w-8">
         </a>
@@ -387,9 +381,9 @@
 
   </div>
 
-  <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white">
+  <div class="border-t border-fond-white/50 mt-10 pt-5 text-center text-sm text-fond-white/80 text-white" data-i18n="footer_copyright">
     © 2025 Madoudinette — Tous droits réservés.
   </div>
 </footer>
   </body>
-</html> 
+</html>
