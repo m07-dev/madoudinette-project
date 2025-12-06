@@ -1,27 +1,22 @@
-/* css/style.css */
-
+/**Utilsation du font pour le site*/
 @font-face {
-    font-family: 'AC Soft Icecream Display'; /* C'est le nom que vous utiliserez dans Tailwind */
-    /* Le fichier présent dans le dossier fonts est un TTF (AC-softice-cream.ttf).
-       On pointe donc vers le fichier existant et on indique le bon format. */
+    font-family: 'AC Soft Icecream Display'; /*Font ulisiser avec tailwind css*/
     src: url('../fonts/AC-softice-cream.ttf') format('truetype');
-    /* IMPORTANT : si vous fournissez aussi une version .woff2, ajoutez-la en premier pour de meilleures performances */
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-/* Vous pouvez ensuite laisser vos variables CSS existantes */
+
 :root {
-    /* ... vos couleurs existantes ... */
+    
 }
 
-/* --- Carousel Template Logic --- */
+/*CSS Caroussel*/
 
 .carousel-container {
   width: 100%;
   overflow: hidden;
-  /* Optionnel : Masque dégradé pour adoucir les bords */
   mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
@@ -29,21 +24,21 @@
 .carousel__content {
   display: flex;
   width: max-content; /* S'adapte au contenu */
-  /* L'animation est configurée ici mais pilotée par les variables JS */
+  /* config de l'animation mais gestion fait par le js */
   animation-name: scroll;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: var(--animation-duration, 20s); /* Valeur par défaut si JS échoue */
+  animation-duration: var(--animation-duration, 20s); /* valeur par défaut si js échoue */
   transform: translateX(0);
 }
 
-/* On enlève la marge droite du tout dernier élément pour que le calcul soit précis */
+/* on enlève la marge droite du tout dernier élément pour que le calcul soit précis */
 .carousel__card:last-child {
   margin-right: 2rem;
 }
 
 .carousel__card:hover {
-  transform: scale(0.95); /* Petit effet de zoom au survol */
+  transform: scale(0.95); /* petit effet de zoom au survol */
 }
 
 .carousel__content:hover {
@@ -55,7 +50,7 @@
     transform: translateX(0);
   }
   to {
-    /* Le JS va injecter la largeur exacte à parcourir ici */
+    /* js va injecter la largeur exacte à parcourir ici */
     transform: translateX(calc(var(--scroll-width) * -1));
   }
 }
