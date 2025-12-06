@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  // =========================================
-  // 1. GESTION DU MENU MOBILE
-  // =========================================
+  // responsive pour les mobiles
   const btn = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
 
@@ -13,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================================
-  // 2. GESTION DU CARROUSEL (Si présent)
-  // =========================================
+  // gestion du caroussel pour les valeurs
   const track = document.querySelector('.carousel__content');
   if (track) {
     const originalCards = Array.from(track.children);
@@ -50,9 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================================
-  // 3. GESTION DE LA TRADUCTION (FR / EN)
-  // =========================================
+  // gestion de la traduction
   
   function changeLanguage(lang) {
     // Sauvegarde
@@ -71,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Mise à jour visuelle des boutons (Desktop ET Mobile)
+    // Maj des button
     updateActiveButtons(lang);
   }
 
@@ -82,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         en: [document.getElementById('lang-en'), document.getElementById('mobile-lang-en')]
     };
 
-    // On réinitialise tout le monde (transparence et gras)
+    // On réinitialise tout le monde
     [...buttons.fr, ...buttons.en].forEach(btn => {
         if(btn) {
             btn.style.opacity = "0.6";
@@ -115,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem('selectedLang') || 'fr';
   changeLanguage(savedLang);
 
-  // --- ÉCOUTEURS D'ÉVÉNEMENTS (Desktop & Mobile) ---
+  // Event listener sur les boutton 
   
   // Fonction pour attacher l'événement click
   const attachClick = (id, lang) => {
@@ -124,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
           el.addEventListener('click', (e) => {
               e.preventDefault();
               changeLanguage(lang);
-              // Optionnel : fermer le menu mobile après choix
+              // fermer le menu mobile après choix
               if(id.includes('mobile') && menu) {
                   menu.classList.add('hidden');
               }
@@ -139,12 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// =========================================
-// 4. DICTIONNAIRE DE TRADUCTION
-// =========================================
+// dico de la tradution 
 const translations = {
   fr: {
-    // --- NAVIGATION & FOOTER ---
+    //  NAVIGATION & FOOTER 
     "nav_home": "Accueil",
     "nav_catalogue": "Catalogue",
     "nav_culture": "Culture & Bienfaits",
@@ -155,7 +147,7 @@ const translations = {
     "footer_follow": "Suivez nous",
     "footer_copyright": "© 2025 Madoudinette — Tous droits réservés.",
 
-    // --- ACCUEIL ---
+    //  ACCUEIL 
     "hero_title": "Madoudinette",
     "hero_desc": "Les 1ers petits pots pour bébés inspirés des saveurs africaines, halal et biologiques.",
     "btn_discover": "Découvrir nos produits",
@@ -176,16 +168,21 @@ const translations = {
     "review_1": "Je suis vraiment ravie d’avoir découvert Madidounette. Mon bébé adore leurs recettes, et moi je suis bluffée par la diversité des saveurs proposées. On est loin des goûts classiques qu’on retrouve partout !.",
     "review_2": "Les repas sont équilibrés, savoureux, et surtout adaptés aux besoins des tout-petits. En tant que parent, c’est rassurant de savoir que tout est fait dans le respect des normes. Un vrai gain de sérénité.",
     "review_3": "Un concept utile, fiable, et vraiment pratique pour les repas de bébé. On apprécie l’aspect sain, halal et la transparence sur la composition. Idéal pour les familles soucieuses de bien faire.",
+    "review_desc_1":"Maman d’une petite fille",
+    "review_desc_2":"Maman de deux enfants",
+    "review_desc_3":"Parent satisfait",
     "tag_6m": "Dès 6 mois",
     "tag_8m": "Dès 8 mois",
     "prod_mafe_title": "Mafé Bœuf",
     "prod_mafe_desc_short": "Un grand classique d’Afrique de l’Ouest revisité. Bœuf tendre, pâte d'arachide douce et petits légumes.",
     "prod_yassa_title": "Yassa Poulet",
     "prod_yassa_desc_short": "Une recette saine et gourmande du célèbre Yassa sénégalais, adaptée aux bébés dès 6 mois, alliant tradition culinaire et apports essentiels pour grandir en douceur.",
+    "prod_yassa_desc_long":"Le Yassa Sénégalais revisité pour les tout-petits...",
     "prod_thieb_title": "Thieb Poisson",
     "prod_thieb_desc_short": "Un plat inspiré du traditionnel Tcheboudienne Sénégalais, revisité pour bébé dès 6 mois. Savoureux et équilibré, il répond aux besoins nutritionnels des tout-petits.",
+    "prod_danger":"Sans sel ajouté • Sans conservateurs • Contient de l'arachide.",
 
-    // --- CATALOGUE ---
+    //  CATALOGUE 
     "cat_header_title": "Nos Petits Pots",
     "cat_header_desc": "Découvrir notre gamme complète de recettes inspirées d'Afrique et d'ailleurs. Cuisinés avec amour, certifiés Bio & Halal.",
     "filter_all": "Tout voir",
@@ -199,7 +196,7 @@ const translations = {
     "allergen_fish": "Poisson",
     "label_vegetables": "Légumes",
 
-    // --- CULTURE ---
+    //  CULTURE 
     "cult_intro_title": "Qualité, saveurs africaines, bio & halal",
     "cult_intro_desc": "Madoudinette propose des petits pots biologiques et 100% halal, inspirés des saveurs africaines et du monde.",
     "btn_more_project": "En savoir plus sur le projet",
@@ -233,7 +230,7 @@ const translations = {
     "culture_brand_desc": "C'est ainsi qu'est née Madoudinette : des petits pots inspirés des recettes du monde, halal, bio et sains, mettant à l’honneur des saveurs comme le mafé, yassa, thieboudienne, revisités pour les bébés dès 6 mois.",
     "culture_brand_follow": "Chaque recette est pensée pour éveiller les papilles des tout-petits, leur transmettre le goût des bonnes choses et de leurs racines, tout en respectant leur santé.",
 
-    // --- DETAILS PRODUITS ---
+    //  DETAILS PRODUITS 
     "btn_back_catalogue": "← Retour au catalogue",
     "label_composition": "Composition",
     "label_vegetables": "Légumes :",
@@ -249,6 +246,7 @@ const translations = {
     "text_prep": "Réchauffer au bain-marie ou au micro-ondes (sans couvercle).",
     "tag_mouline": "Texture Moulinée",
     "prod_mafe_desc_long": "Faites voyager les papilles de bébé avec ce grand classique d’Afrique de l’Ouest !",
+    "prod_thieb_desc_long" : "Inspiré du plat national sénégalais (Thiéboudienne), ce petit pot offre à bébé toutes les saveurs de la mer et du potager. Du poisson blanc sauvage mélangé à du riz rouge mijoté dans une sauce tomate douce.",
     "mafe_ing_veg": "Carottes bio, Pommes de terre bio, Oignons.",
     "mafe_ing_prot": "Bœuf Halal (origine France).",
     "mafe_ing_sauce": "Eau de cuisson, Pâte d'arachide bio (5%).",
@@ -258,14 +256,14 @@ const translations = {
     "yassa_ing_sauce": "Jus de citron, Huile d'olive, Thym.",
     "yassa_ing_acc": "Riz blanc mixé.",
     "thieb_ing_veg": "Carottes, Aubergines, Chou, Tomate.",
-    "thieb_ing_prot": "Colin d'Alaska (Pêche durable MSC).",
-    "thieb_ing_starch": "Riz de Camargue.",
+    "thieb_ing_prot": "Poisson",
+    "thieb_ing_starch": "Riz Blanc.",
     "label_accompaniment": "Accompagnement :",
     "label_starch": "Féculents :",
     "allergen_none": "Aucun allergène majeur",
 
 
-    // --- CONTACT PAGE ---
+    //  CONTACT PAGE 
     "contact_header_title": "Contactez-nous",
     "contact_header_desc": "Une question sur nos produits, une suggestion ou juste envie de dire bonjour ? L'équipe Madoudinette est à votre écoute.",
     "contact_info_title": "Nos Coordonnées",
@@ -278,7 +276,7 @@ const translations = {
   },
 
   en: {
-    // --- NAVIGATION & FOOTER ---
+    //  NAVIGATION & FOOTER 
     "nav_home": "Home",
     "nav_catalogue": "Catalogue",
     "nav_culture": "Culture & Benefits",
@@ -289,7 +287,7 @@ const translations = {
     "footer_follow": "Follow us",
     "footer_copyright": "© 2025 Madoudinette — All rights reserved.",
 
-    // --- HOME ---
+    //  HOME 
     "hero_title": "Madoudinette",
     "hero_desc": "The 1st baby food jars inspired by African flavors, Halal and Organic.",
     "btn_discover": "Discover our products",
@@ -310,16 +308,21 @@ const translations = {
     "review_1": "I'm so glad I discovered Madidounette. My baby loves their recipes, and I'm blown away by the variety of flavors they offer. They're nothing like the usual tastes you find everywhere!",
     "review_2": "The meals are balanced, tasty, and above all, tailored to the needs of toddlers. As a parent, it's reassuring to know that everything is done according to regulations. A real peace of mind.",
     "review_3": "A useful, reliable, and truly practical concept for baby food. We appreciate its healthy, halal aspect and the transparency regarding its ingredients. Ideal for families who care about doing things right.",
+    "review_desc_1":"Mom of a little girl",
+    "review_desc_2":"Mother of two children",
+    "review_desc_3":"Parent satisfied",
     "tag_6m": "From 6 months",
     "tag_8m": "From 8 months",
     "prod_mafe_title": "Beef Mafe",
     "prod_mafe_desc_short": "A classic West African dish with a twist. Tender beef, mild peanut paste and baby vegetables.",
     "prod_yassa_title": "Chicken Yassa",
     "prod_yassa_desc_short": "A healthy and delicious recipe for the famous Senegalese Yassa, adapted for babies from 6 months old, combining culinary tradition and essential nutrients for gentle growth.",
+    "prod_yassa_desc_long":"Senegalese Yassa, reimagined for toddlers...",
     "prod_thieb_title": "Fish Thieb",
     "prod_thieb_desc_short": "A dish inspired by the traditional Senegalese Thieboudienne, adapted for babies from 6 months old. Tasty and balanced, it meets the nutritional needs of toddlers.",
+    "prod_danger":"No added salt • No preservatives • Contains peanuts.",
 
-    // --- CATALOGUE ---
+    //  CATALOGUE 
     "cat_header_title": "Our Baby Jars",
     "cat_header_desc": "Discover our complete range of recipes inspired by Africa and beyond. Cooked with love, certified Organic & Halal.",
     "filter_all": "See all",
@@ -333,7 +336,7 @@ const translations = {
     "allergen_fish": "Fish",
     "label_vegetables": "Vegetables",
 
-    // --- CULTURE ---
+    //  CULTURE 
     "cult_intro_title": "Quality, African flavors, Organic & Halal",
     "cult_intro_desc": "Madoudinette offers organic and 100% halal baby jars, inspired by African and world flavors.",
     "btn_more_project": "Learn more about the project",
@@ -367,7 +370,7 @@ const translations = {
     "culture_brand_desc": "That's how Madoudinette was born: baby jars inspired by world recipes, halal, organic and wholesome, showcasing flavors such as mafé, yassa and thieboudienne, specially reworked for babies from 6 months.",
     "culture_brand_follow": "Each recipe is designed to awaken little ones' taste buds, pass on the taste of good food and their roots, while respecting their health.",
 
-    // --- PRODUCT DETAILS ---
+    //  PRODUCT DETAILS 
     "btn_back_catalogue": "← Back to Catalogue",
     "label_composition": "Composition",
     "label_vegetables": "Vegetables:",
@@ -383,6 +386,7 @@ const translations = {
     "text_prep": "Reheat in a bain-marie or microwave (without cover).",
     "tag_mouline": "Mashed Texture",
     "prod_mafe_desc_long": "Take baby's taste buds on a journey with this West African classic!",
+    "prod_thieb_desc_long" :"Inspired by the Senegalese national dish (Thiéboudienne), this little jar offers baby all the flavors of the sea and the garden. Wild white fish mixed with red rice simmered in a mild tomato sauce.",
     "mafe_ing_veg": "Organic carrots, Organic potatoes, Onions.",
     "mafe_ing_prot": "Halal Beef (origin: France).",
     "mafe_ing_sauce": "Cooking water, Organic peanut paste (5%).",
@@ -392,13 +396,13 @@ const translations = {
     "yassa_ing_sauce": "Lime juice, Olive oil, Thyme.",
     "yassa_ing_acc": "Blended white rice.",
     "thieb_ing_veg": "Carrots, Eggplants, Cabbage, Tomato.",
-    "thieb_ing_prot": "Alaskan Pollock (MSC sustainable fishing).",
-    "thieb_ing_starch": "Camargue Rice.",
+    "thieb_ing_prot": "Fish",
+    "thieb_ing_starch": "White Rice.",
     "label_accompaniment": "Side dish:",
     "label_starch": "Starches:",
     "allergen_none": "No major allergens",
 
-    // --- CONTACT PAGE ---
+    //  CONTACT PAGE 
     "contact_header_title": "Contact Us",
     "contact_header_desc": "A question about our products, a suggestion, or just want to say hello? The Madoudinette team is here to listen.",
     "contact_info_title": "Our Contact Details",
